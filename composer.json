@@ -1,5 +1,5 @@
 {
-  "name": "siteation/magento2-module-storeinfo-payment-logos",
+  "name": "siteation/magento2-storeinfo-payment-logos",
   "version": "1.0.0",
   "license": "MIT",
   "type": "magento2-module",

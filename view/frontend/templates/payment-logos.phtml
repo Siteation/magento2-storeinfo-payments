@@ -1,0 +1,30 @@
+<?php declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+use Siteation\StoreInfoPaymentLogos\ViewModel\StoreInfoPaymentLogos;
+
+/** @var ViewModelRegistry $viewModels */
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var StoreInfoPaymentLogos $storeInfoPaymentLogos */
+
+$storeInfoPaymentLogos = $viewModels->require(StoreInfoPaymentLogos::class);
+$paymentOptions = $storeInfoPaymentLogos->getPaymentLogosArrayNames();
+$iconPack = "payment-icons/dark/";
+
+if (!$paymentOptions) {
+    return '';
+}
+?>
+
+<div class="pr-4 lg:w-1/4 md:w-1/2">
+    <ul class="flex flex-wrap -mx-1">
+        <?php foreach ($paymentOptions as $option): ?>
+            <li class="mx-1 mb-2">
+                <?= $storeInfoPaymentLogos->getSvg($iconPack, $escaper->escapeHtml($option)); ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

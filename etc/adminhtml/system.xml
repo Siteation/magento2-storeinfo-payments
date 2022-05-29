@@ -1,11 +1,121 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd"
+>
     <system>
         <section id="general">
-            <group id="store_information_extra" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Store Extra Information</label>
-                <!-- INPUT -->
+            <group id="store_information_extra">
+                <group
+                    id="payment_logos"
+                    translate="label"
+                    sortOrder="300"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1"
+                >
+                    <label>Payment Logo's</label>
+                    <comment>
+                        Please note that the payment logos are displayed in the order of the payment methods they are added.
+                        Type out the payment provider name in lowercase for the logo.
+                    </comment>
+                    <field
+                        id="option_1"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 1</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_2"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 2</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_3"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 3</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_4"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 4</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_5"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 5</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_6"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 6</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_7"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 7</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                    <field
+                        id="option_8"
+                        translate="label"
+                        type="text"
+                        sortOrder="10"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                    >
+                        <label>Option 8</label>
+                        <validate>letters-with-basic-punc no-whitespace</validate>
+                    </field>
+                </group>
             </group>
         </section>
     </system>
