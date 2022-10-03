@@ -2,60 +2,107 @@
 
 namespace Siteation\StoreInfoPaymentLogos\ViewModel;
 
-use Hyva\Theme\ViewModel\SvgIcons;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
-use Magento\Store\Model\ScopeInterface;
+use Magento\Payment\Model\Config;
 
 class StoreInfoPaymentLogos implements ArgumentInterface
 {
     protected $scopeConfig;
-    protected $svgIcons;
-
-    public function __construct(
-        ScopeConfigInterface $scopeConfig,
-        SvgIcons $svgIcons
-    ) {
-        $this->scopeConfig = $scopeConfig;
-        $this->svgIcons = $svgIcons;
-    }
+    protected $paymentModelConfig;
+    // possiblePaymentMethods
+    public const PPM = [
+        "afterpay",
+        "applepay",
+        "bancontact",
+        "banktransfer",
+        "belfius",
+        "creditcard",
+        "sepa",
+        "eps",
+        "giftcard",
+        "giropay",
+        "ideal",
+        "kbc/cbc",
+        "in3",
+        "klarnapaylater",
+        "klarnapaynow",
+        "klarnaslice",
+        "mybank",
+        "paypal",
+        "paysafecard",
+        "przelewy24",
+        "sofort",
+    ];
 
     /**
-     * Get store information
-     *
-     * @param string $attribute
-     * @return mixed
+     * @param ScopeConfigInterface $scopeConfig
+     * @param Config $paymentModelConfig
      */
-    public function getStoreInfoPaymentLogos(string $attribute)
-    {
-        $path = sprintf('general/store_information_extra/payment_logos/%s', $attribute);
-        return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
+    public function __construct(
+        ScopeConfigInterface $scopeConfig,
+        Config $paymentModelConfig
+    ) {
+        $this->scopeConfig = $scopeConfig;
+        $this->paymentModelConfig = $paymentModelConfig;
     }
 
-    public function getPaymentLogosArrayNames()
+    public function getActivePaymentMethods()
     {
-        $names = [];
+        $payments = $this->paymentModelConfig->getActiveMethods();
+        $methods = array();
 
-        for ($i = 0; $i < 9; $i++) {
-            if ($name = $this->getStoreInfoPaymentLogos('option_' . $i)) {
-                $names[] = $name;
+        foreach ($payments as $paymentCode => $paymentModel) {
+            $paymentTitle = $this->scopeConfig->getValue('payment/'.$paymentCode.'/title');
+
+            $methods[$paymentCode] = array(
+                'title' => $paymentTitle,
+                'code' => $paymentCode
+            );
+        }
+
+        return $methods;
+    }
+
+    public function getActivePaymentNames()
+    {
+        $payments = $this->getActivePaymentMethods();
+        $methods = array();
+
+        foreach ($payments as $values) {
+            $methods[] = $values['title'];
+        }
+
+        return $methods;
+    }
+
+    public function getActivePaymentCodes()
+    {
+        $payments = $this->getActivePaymentMethods();
+        $methods = array();
+
+        foreach ($payments as $values) {
+            $methods[] = $values['code'];
+        }
+
+        return $methods;
+    }
+
+    public function getPaymentMethods()
+    {
+        $paymentOptions = self::PPM;
+        $paymentCodes = $this->getActivePaymentCodes();
+        $methods = array();
+
+        foreach ($paymentCodes as $paymentCode) {
+            // TODO split foreach logic
+            foreach ($paymentOptions as $paymentMethod) {
+                if (str_contains($paymentCode, $paymentMethod)) {
+                    $methods[] = $paymentMethod;
+                }
             }
         }
 
-        return $names;
-    }
-
-    public function getSvg(
-        string $path,
-        string $icon,
-        string $classNames = '',
-        ?int $width = 48,
-        ?int $height = 32,
-        array $attributes = []
-    ) {
-        $safeIconName = strtolower(preg_replace('#[ -]+#', '-', $icon));
-        $iconPath = $path . $safeIconName;
-
-        return $this->svgIcons->renderHtml($iconPath, $classNames, $width, $height, $attributes);
+        return array_unique($methods);
     }
 }

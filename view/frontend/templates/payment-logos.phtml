@@ -8,23 +8,23 @@ use Siteation\StoreInfoPaymentLogos\ViewModel\StoreInfoPaymentLogos;
 /** @var ViewModelRegistry $viewModels */
 /** @var Template $block */
 /** @var Escaper $escaper */
-/** @var StoreInfoPaymentLogos $storeInfoPaymentLogos */
 
+/** @var StoreInfoPaymentLogos $storeInfoPaymentLogos */
 $storeInfoPaymentLogos = $viewModels->require(StoreInfoPaymentLogos::class);
-$paymentOptions = $storeInfoPaymentLogos->getPaymentLogosArrayNames();
-$iconPack = "payment-icons/dark/";
+$paymentOptions = $storeInfoPaymentLogos->getPaymentMethods();
 
 if (!$paymentOptions) {
     return '';
 }
 ?>
 
-<div class="pr-4 lg:w-1/4 md:w-1/2">
-    <ul class="flex flex-wrap -mx-1">
-        <?php foreach ($paymentOptions as $option): ?>
-            <li class="mx-1 mb-2">
-                <?= $storeInfoPaymentLogos->getSvg($iconPack, $escaper->escapeHtml($option)); ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</div>
+<ul class="flex flex-wrap gap-4">
+    <?php foreach ($paymentOptions as $option): ?>
+        <li class="icon-<?= $escaper->escapeHtml($option) ?>">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
+                <title><?= $escaper->escapeHtml(__('Go to our %1 page', 'Facebook')); ?></title>
+                <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#<?= $escaper->escapeHtml($option) ?>" />
+            </svg>
+        </li>
+    <?php endforeach; ?>
+</ul>

@@ -5,7 +5,7 @@
         <referenceBlock name="footer-content">
             <block
                 name="siteation.payment.logos"
-                as="payement-logos"
+                as="payment-logos"
                 template="Siteation_StoreInfoPaymentLogos::payment-logos.phtml"
                 after="-"
             />
