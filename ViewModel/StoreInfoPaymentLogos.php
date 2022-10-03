@@ -23,7 +23,7 @@ class StoreInfoPaymentLogos implements ArgumentInterface
         "giftcard",
         "giropay",
         "ideal",
-        "kbc/cbc",
+        "cbc",
         "in3",
         "klarnapaylater",
         "klarnapaynow",
