@@ -21,8 +21,19 @@ if (!$paymentOptions) {
 <ul class="flex flex-wrap gap-4">
     <?php foreach ($paymentOptions as $option): ?>
         <li class="icon-<?= $escaper->escapeHtml($option) ?>">
+            <?php if ($option === "creditcard"): ?>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
+                    <title>meastro</title>
+                    <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#meastro" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
+                    <title>visa</title>
+                    <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#visa" />
+                </svg>
+                <?php continue; ?>
+            <?php endif; ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
-                <title><?= $escaper->escapeHtml(__('Go to our %1 page', 'Facebook')); ?></title>
+                <title><?= $escaper->escapeHtml($option) ?></title>
                 <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#<?= $escaper->escapeHtml($option) ?>" />
             </svg>
         </li>
