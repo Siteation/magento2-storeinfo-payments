@@ -64,6 +64,9 @@ class StoreInfoPaymentLogos implements ArgumentInterface
         return $methods;
     }
 
+    /**
+     * filter only names
+     */
     public function getActivePaymentNames()
     {
         $payments = $this->getActivePaymentMethods();
@@ -76,6 +79,9 @@ class StoreInfoPaymentLogos implements ArgumentInterface
         return $methods;
     }
 
+    /**
+     * filter only codes
+     */
     public function getActivePaymentCodes()
     {
         $payments = $this->getActivePaymentMethods();
@@ -88,6 +94,9 @@ class StoreInfoPaymentLogos implements ArgumentInterface
         return $methods;
     }
 
+    /**
+     * filter based on array
+     */
     public function getPaymentMethods()
     {
         $paymentOptions = self::PPM;
