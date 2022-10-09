@@ -5,35 +5,12 @@ namespace Siteation\StoreInfoPaymentLogos\ViewModel;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Payment\Model\Config;
+use Magento\Store\Model\ScopeInterface;
 
 class StoreInfoPaymentLogos implements ArgumentInterface
 {
     protected $scopeConfig;
     protected $paymentModelConfig;
-    // possiblePaymentMethods
-    public const PPM = [
-        "afterpay",
-        "applepay",
-        "bancontact",
-        "banktransfer",
-        "belfius",
-        "creditcard",
-        "sepa",
-        "eps",
-        "giftcard",
-        "giropay",
-        "ideal",
-        "cbc",
-        "in3",
-        "klarnapaylater",
-        "klarnapaynow",
-        "klarnaslice",
-        "mybank",
-        "paypal",
-        "paysafecard",
-        "przelewy24",
-        "sofort",
-    ];
 
     /**
      * @param ScopeConfigInterface $scopeConfig
@@ -62,6 +39,14 @@ class StoreInfoPaymentLogos implements ArgumentInterface
         }
 
         return $methods;
+    }
+
+    /**
+     * Gets the static selected values
+     */
+    public function selectedPaymentMethods()
+    {
+        return $this->scopeConfig->getValue('siteation_payment/payment/payment_icons', ScopeInterface::SCOPE_STORE);
     }
 
     /**
@@ -95,16 +80,15 @@ class StoreInfoPaymentLogos implements ArgumentInterface
     }
 
     /**
-     * filter based on array
+     * Filter based on both the ActivePaymentMethods and the selectedPaymentMethods
      */
-    public function getPaymentMethods()
+    public function getPaymentMethods(): array
     {
-        $paymentOptions = self::PPM;
+        $paymentOptions = explode(",", $this->selectedPaymentMethods());
         $paymentCodes = $this->getActivePaymentCodes();
         $methods = array();
 
         foreach ($paymentCodes as $paymentCode) {
-            // TODO split foreach logic
             foreach ($paymentOptions as $paymentMethod) {
                 if (str_contains($paymentCode, $paymentMethod)) {
                     $methods[] = $paymentMethod;

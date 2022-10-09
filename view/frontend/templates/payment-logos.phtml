@@ -12,6 +12,7 @@ use Siteation\StoreInfoPaymentLogos\ViewModel\StoreInfoPaymentLogos;
 /** @var StoreInfoPaymentLogos $storeInfoPaymentLogos */
 $storeInfoPaymentLogos = $viewModels->require(StoreInfoPaymentLogos::class);
 $paymentOptions = $storeInfoPaymentLogos->getPaymentMethods();
+$paymentIconPath = 'Siteation_StoreInfoPaymentLogos::images/payments.svg';
 
 if (!$paymentOptions) {
     return '';
@@ -20,21 +21,25 @@ if (!$paymentOptions) {
 
 <ul class="flex flex-wrap gap-4">
     <?php foreach ($paymentOptions as $option): ?>
-        <li class="icon-<?= $escaper->escapeHtml($option) ?>">
-            <?php if ($option === "creditcard"): ?>
+        <?php if ($option === "creditcard"): ?>
+            <li class="icon-maestro">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
-                    <title>meastro</title>
-                    <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#meastro" />
+                    <title>maestro</title>
+                    <use href="<?= $block->getViewFileUrl($paymentIconPath); ?>#maestro" />
                 </svg>
+            </li>
+            <li class="icon-visa">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
                     <title>visa</title>
-                    <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#visa" />
+                    <use href="<?= $block->getViewFileUrl($paymentIconPath); ?>#visa" />
                 </svg>
-                <?php continue; ?>
-            <?php endif; ?>
+            </li>
+            <?php continue; ?>
+        <?php endif; ?>
+        <li class="icon-<?= $escaper->escapeHtml($option) ?>">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
                 <title><?= $escaper->escapeHtml($option) ?></title>
-                <use href="<?= $block->getViewFileUrl('Siteation_StoreInfoPaymentLogos::images/payments.svg'); ?>#<?= $escaper->escapeHtml($option) ?>" />
+                <use href="<?= $block->getViewFileUrl($paymentIconPath); ?>#<?= $escaper->escapeHtml($option) ?>" />
             </svg>
         </li>
     <?php endforeach; ?>

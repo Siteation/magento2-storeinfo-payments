@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd"
+>
+    <default>
+        <siteation_payment>
+            <payment>
+                <payment_filter>
+                    {
+                        "AfterPay": "afterpay",
+                        "Apple Pay": "applepay",
+                        "Bancontact": "bancontact",
+                        "Bank Transfer": "banktransfer",
+                        "Belfius": "belfius",
+                        "Creditcard": "creditcard",
+                        "Sepa": "sepa",
+                        "Eps": "eps",
+                        "Giftcard": "giftcard",
+                        "Giropay": "giropay",
+                        "iDeal": "ideal",
+                        "CBC": "cbc",
+                        "IN3": "in3",
+                        "Klarna": "klarna",
+                        "MyBank": "mybank",
+                        "PayPal": "paypal",
+                        "Paysafe Card": "paysafecard",
+                        "Przelewy 24": "przelewy24",
+                        "Sofort": "sofort"
+                    }
+                </payment_filter>
+            </payment>
+        </siteation_payment>
+    </default>
+</config>
