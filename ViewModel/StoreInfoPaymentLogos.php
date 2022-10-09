@@ -46,7 +46,9 @@ class StoreInfoPaymentLogos implements ArgumentInterface
      */
     public function selectedPaymentMethods()
     {
-        return $this->scopeConfig->getValue('siteation_payment/payment/payment_icons', ScopeInterface::SCOPE_STORE);
+        $data = $this->scopeConfig->getValue('siteation_payment/payment/payment_icons', ScopeInterface::SCOPE_STORE);
+        $options = $data ? explode(",", $data) : [];
+        return $options;
     }
 
     /**
@@ -84,7 +86,7 @@ class StoreInfoPaymentLogos implements ArgumentInterface
      */
     public function getPaymentMethods(): array
     {
-        $paymentOptions = explode(",", $this->selectedPaymentMethods());
+        $paymentOptions = $this->selectedPaymentMethods();
         $paymentCodes = $this->getActivePaymentCodes();
         $methods = array();
 

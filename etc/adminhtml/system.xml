@@ -38,7 +38,6 @@
                 >
                     <label>Payment Icons to show</label>
                     <source_model>Siteation\StoreInfoPaymentLogos\Model\Config\PaymentOptions</source_model>
-                    <can_be_empty>1</can_be_empty>
                 </field>
             </group>
         </section>

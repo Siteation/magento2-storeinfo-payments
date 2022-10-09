@@ -24,7 +24,7 @@ class PaymentOptions implements OptionSourceInterface
 
     public function toOptionArray(): array
     {
-        $optionsJson = json_decode($this->getStoreConfig('siteation_payment/payment/payment_filter'));
+        $optionsJson = json_decode($this->getStoreConfig('siteation_payment/payment/payment_filter_options'));
         $options = array();
 
         foreach ($optionsJson as $key => $option) {

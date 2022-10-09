@@ -6,7 +6,7 @@
     <default>
         <siteation_payment>
             <payment>
-                <payment_filter>
+                <payment_filter_options>
                     {
                         "AfterPay": "afterpay",
                         "Apple Pay": "applepay",
@@ -28,7 +28,8 @@
                         "Przelewy 24": "przelewy24",
                         "Sofort": "sofort"
                     }
-                </payment_filter>
+                </payment_filter_options>
+                <payment_icons>afterpay,applepay,bancontact,banktransfer,belfius,creditcard,sepa,eps,giftcard,giropay,ideal,cbc,in3,klarna,mybank,paypal,paysafecard,przelewy24,sofort</payment_icons>
             </payment>
         </siteation_payment>
     </default>
