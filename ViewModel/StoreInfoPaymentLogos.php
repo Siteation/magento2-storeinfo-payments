@@ -9,8 +9,8 @@ use Magento\Store\Model\ScopeInterface;
 
 class StoreInfoPaymentLogos implements ArgumentInterface
 {
-    protected $scopeConfig;
-    protected $paymentModelConfig;
+    protected ScopeConfigInterface $scopeConfig;
+    protected Config $paymentModelConfig;
 
     /**
      * @param ScopeConfigInterface $scopeConfig
