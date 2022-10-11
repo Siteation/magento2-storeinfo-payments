@@ -5,6 +5,9 @@
 >
     <module name="Siteation_StoreInfoPaymentLogos">
         <sequence>Siteation_StoreInfoExtra</sequence>
+        <sequence>Magento_Payment</sequence>
+        <sequence>Magento_Store</sequence>
+        <sequence>Magento_Backend</sequence>
         <sequence>Hyva_Theme</sequence>
         <!-- <sequence>Hyva_PaymentIcons</sequence> -->
     </module>
