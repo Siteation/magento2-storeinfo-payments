@@ -4,11 +4,13 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"
 >
     <module name="Siteation_StoreInfoPaymentLogos">
-        <sequence>Siteation_StoreInfoExtra</sequence>
-        <sequence>Magento_Payment</sequence>
-        <sequence>Magento_Store</sequence>
-        <sequence>Magento_Backend</sequence>
-        <sequence>Hyva_Theme</sequence>
-        <!-- <sequence>Hyva_PaymentIcons</sequence> -->
+        <sequence>
+        <module name="Siteation_StoreInfoExtra"/>
+        <module name="Magento_Payment"/>
+        <module name="Magento_Store"/>
+        <module name="Magento_Backend"/>
+        <module name="Hyva_Theme"/>
+        <!--<module name="Hyva_PaymentIcons"/>-->
+        </sequence>
     </module>
 </config>
