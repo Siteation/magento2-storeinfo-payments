@@ -24,13 +24,16 @@ class StoreInfoPaymentLogos implements ArgumentInterface
         $this->paymentModelConfig = $paymentModelConfig;
     }
 
-    public function getActivePaymentMethods()
+    /**
+     * @return array[]
+     */
+    public function getActivePaymentMethods(): array
     {
         $payments = $this->paymentModelConfig->getActiveMethods();
         $methods = array();
 
         foreach ($payments as $paymentCode => $paymentModel) {
-            $paymentTitle = $this->scopeConfig->getValue('payment/'.$paymentCode.'/title');
+            $paymentTitle = $this->scopeConfig->getValue('payment/' . $paymentCode . '/title');
 
             $methods[$paymentCode] = array(
                 'title' => $paymentTitle,
@@ -43,8 +46,10 @@ class StoreInfoPaymentLogos implements ArgumentInterface
 
     /**
      * Gets the static selected values
+     *
+     * @return string[]
      */
-    public function selectedPaymentMethods()
+    public function selectedPaymentMethods(): array
     {
         $data = $this->scopeConfig->getValue('siteation_payment/payment/payment_icons', ScopeInterface::SCOPE_STORE);
         $options = $data ? explode(",", $data) : [];
@@ -53,8 +58,10 @@ class StoreInfoPaymentLogos implements ArgumentInterface
 
     /**
      * filter only names
+     *
+     * @return string[]
      */
-    public function getActivePaymentNames()
+    public function getActivePaymentNames(): array
     {
         $payments = $this->getActivePaymentMethods();
         $methods = array();
@@ -68,6 +75,8 @@ class StoreInfoPaymentLogos implements ArgumentInterface
 
     /**
      * filter only codes
+     *
+     * @return string[]
      */
     public function getActivePaymentCodes()
     {
@@ -83,6 +92,8 @@ class StoreInfoPaymentLogos implements ArgumentInterface
 
     /**
      * Filter based on both the ActivePaymentMethods and the selectedPaymentMethods
+     *
+     * @return string[]
      */
     public function getPaymentMethods(): array
     {

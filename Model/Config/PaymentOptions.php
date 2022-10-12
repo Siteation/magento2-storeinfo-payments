@@ -7,21 +7,28 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class PaymentOptions implements OptionSourceInterface
 {
-    /**
-     * @var ScopeConfigInterface
-     */
-    protected $scopeConfig;
+    protected ScopeConfigInterface $scopeConfig;
 
+    /**
+     * @param ScopeConfigInterface $scopeConfig
+     */
     public function __construct(ScopeConfigInterface $scopeConfig)
     {
         $this->scopeConfig = $scopeConfig;
     }
 
-    public function getStoreConfig($value)
+    /**
+     * @param string $path
+     * @return mixed
+     */
+    public function getStoreConfig(string $path)
     {
-        return $this->scopeConfig->getValue($value, 'store');
+        return $this->scopeConfig->getValue($path, 'store');
     }
 
+    /**
+     * @return array[]
+     */
     public function toOptionArray(): array
     {
         $optionsJson = json_decode($this->getStoreConfig('siteation_payment/payment/payment_filter_options'));
