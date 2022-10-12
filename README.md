@@ -13,7 +13,7 @@ Install the package via;
 
 ```bash
 composer require siteation/magento2-module-storeinfo-payment-logos
-bin/magento setup:upgrade
+bin/magento module:enable Siteation_StoreInfoPaymentLogos
 ```
 
 > This Module requires Magento 2.3 or higher!
