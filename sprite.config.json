@@ -1,0 +1,10 @@
+{
+  "dest": "view/frontend/web/images",
+  "mode": {
+    "symbol": {
+      "dest": ".",
+      "sprite": "payment-logos.svg",
+      "inline": true
+    }
+  }
+}

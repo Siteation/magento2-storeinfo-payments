@@ -1,0 +1,24 @@
+{
+  "name": "magento2-storepayment-logos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "svg-sprite --config sprite.config.json assets/*.svg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siteation/magento2-storeinfo-payment-logos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Siteation/magento2-storeinfo-payment-logos/issues"
+  },
+  "homepage": "https://github.com/Siteation/magento2-storeinfo-payment-logos#readme",
+  "devDependencies": {
+    "svg-sprite": "^2.0.2"
+  }
+}

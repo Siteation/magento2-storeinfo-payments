@@ -22,3 +22,9 @@ bin/magento module:enable Siteation_StoreInfoPaymentLogos
 ## How to use
 
 <!-- TODO: how to -->
+
+### Generation svg sprite
+
+<!-- TODO: how to -->
+
+https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md
