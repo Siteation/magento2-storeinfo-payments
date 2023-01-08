@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Siteation\StoreInfoPaymentLogos\ViewModel;
+namespace Siteation\StorePaymentLogos\ViewModel;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Payment\Model\Config;
 use Magento\Store\Model\ScopeInterface;
 
-class StoreInfoPaymentLogos implements ArgumentInterface
+class StorePaymentLogos implements ArgumentInterface
 {
     protected ScopeConfigInterface $scopeConfig;
     protected Config $paymentModelConfig;

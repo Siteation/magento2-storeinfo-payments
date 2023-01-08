@@ -37,7 +37,7 @@
                     canRestore="1"
                 >
                     <label>Payment Icons to show</label>
-                    <source_model>Siteation\StoreInfoPaymentLogos\Model\Config\PaymentOptions</source_model>
+                    <source_model>Siteation\StorePaymentLogos\Model\Config\PaymentOptions</source_model>
                 </field>
             </group>
         </section>

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Siteation\StoreInfoPaymentLogos\Model\Config;
+namespace Siteation\StorePaymentLogos\Model\Config;
 
 use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;

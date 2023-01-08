@@ -1,4 +1,4 @@
-# Siteation - Magento 2 Module Store Info
+# Siteation - Magento 2 StorePaymentLogos
 
 [![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-module-storeinfo-payment-logos?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-module-storeinfo-payment-logos)
 ![Supported Magento Versions](https://img.shields.io/badge/magento-%202.3_|_2.4-brightgreen.svg?logo=magento&longCache=true&style=for-the-badge)
@@ -12,8 +12,8 @@
 Install the package via;
 
 ```bash
-composer require siteation/magento2-module-storeinfo-payment-logos
-bin/magento module:enable Siteation_StoreInfoPaymentLogos
+composer require siteation/magento2-storepayment-logos
+bin/magento module:enable Siteation_StorePaymentLogos
 ```
 
 > This Module requires Magento 2.3 or higher!
