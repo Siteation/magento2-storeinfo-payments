@@ -97,18 +97,44 @@ class StorePaymentLogos implements ArgumentInterface
      */
     public function getPaymentMethods(): array
     {
-        $paymentOptions = $this->selectedPaymentMethods();
-        $paymentCodes = $this->getActivePaymentCodes();
+        $filters = $this->selectedPaymentMethods();
+        $codes = $this->getActivePaymentCodes();
         $methods = array();
 
-        foreach ($paymentCodes as $paymentCode) {
-            foreach ($paymentOptions as $paymentMethod) {
-                if (str_contains($paymentCode, $paymentMethod)) {
-                    $methods[] = $paymentMethod;
+        foreach ($codes as $code) {
+            $payment = $code;
+
+            // Filter aliases
+            if (str_contains($code, "_afterpay")) {
+                $payment = "riverty";
+            }
+
+            if (str_contains($code, "_kbc")) {
+                $payment = "_cbc";
+            }
+
+            if (str_contains($code, "cadeau")) {
+                $payment = "giftcard";
+            }
+
+            if (
+                str_contains($code, "_visa") ||
+                str_contains($code, "_maestro") ||
+                str_contains($code, "_amex") ||
+                str_contains($code, "_mastercard")
+            ) {
+                $payment = "creditcard";
+            }
+
+            // Iterate through the available payment methods and apply a filter to obtain the active ones
+            foreach ($filters as $filter) {
+                if (str_contains($payment, $filter)) {
+                    $methods[] = $payment;
                 }
             }
         }
 
+        // Return the array without any duplicates
         return array_unique($methods);
     }
 }

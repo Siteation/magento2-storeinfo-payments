@@ -31,18 +31,21 @@ https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md
 
 ### Supported Payment options
 
+<!-- TODO update filter -->
+<!-- TODO create missing icons -->
+<!-- TODO check payment codes for provider -->
+
 | Options          | Mollie       | PayNL        | MultiSafePay | has icon |
 | ---------------- | ------------ | ------------ | ------------ | -------- |
-| afterpay/riverty | x            | x            | x            | x        |
+| afterpay/riverty |              | x            | x            | x        |
 | alipay           |              | x            | x            |          |
 | amazonpay        |              | x            | x            |          |
-| american express |              | x            | = Creditcard |          |
+| american express | = Creditcard | = Creditcard | = Creditcard | -        |
 | applepay         | x            | x            | x            | x        |
 | bancontact       | x            | x            | x            | x        |
 | banktransfer     | x            |              | x            | x        |
 | belfius          | x            |              | x            | x        |
 | biller           |              | x            | x            |          |
-| cbc              |              |              | x            |          |
 | creditcard       | x            |              | x            | x        |
 | direct-debit     |              |              | x            |          |
 | dotpay           |              |              | x            |          |
@@ -55,12 +58,12 @@ https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md
 | in3              | x            | x            | x            | x        |
 | kbc/cbc          | x            |              | x            |          |
 | klarna           | x            | x            |              | x        |
-| maestro          | = Creditcard | = Creditcard | = Creditcard |          |
-| mastercard       |              | = Creditcard | = Creditcard |          |
+| maestro          | = Creditcard | = Creditcard | = Creditcard | x-       |
+| mastercard       | = Creditcard | = Creditcard | = Creditcard | -        |
 | mybank           | x            |              | x            |          |
-| paypal           | x            | x            | x            |          |
+| paypal           | x            | x            | x            | x        |
 | paysafecard      | x            |              | x            |          |
 | przelewy24       | x            | x            |              |          |
-| visa             | = Creditcard |              | = Creditcard |          |
-| sepa             | x            |              |              |          |
-| sofort           | x            | x            |              |          |
+| visa             | = Creditcard | = Creditcard | = Creditcard | x-       |
+| sepa             | x            |              |              | x        |
+| sofort           | x            | x            |              | x        |
