@@ -5,7 +5,7 @@
 [![Hyvä Themes Supported](https://img.shields.io/badge/Hyva_Themes-Supported-3df0af.svg?longCache=true&style=for-the-badge)](https://hyva.io/)
 ![License](https://img.shields.io/github/license/Siteation/magento2-module-storeinfo-payment-logos?color=%23234&style=for-the-badge)
 
-The Siteation StorePaymentLogos module simplifies the process of displaying your configured payment methods on your online store.
+The Siteation StorePaymentLogos module simplifies the process of displaying your configured payment methods on your store.
 
 All you need to do is enable your payment methods as you would for the checkout payment options.
 
