@@ -5,7 +5,11 @@
 [![Hyvä Themes Supported](https://img.shields.io/badge/Hyva_Themes-Supported-3df0af.svg?longCache=true&style=for-the-badge)](https://hyva.io/)
 ![License](https://img.shields.io/github/license/Siteation/magento2-module-storeinfo-payment-logos?color=%23234&style=for-the-badge)
 
-<!-- TODO: intro -->
+The Siteation StorePaymentLogos module simplifies the process of displaying your configured payment methods on your online store.
+
+All you need to do is enable your payment methods as you would for the checkout payment options.
+
+This module will then display the same options as payment icons in your footer or anywhere else you choose.
 
 ## Installation
 
@@ -21,21 +25,37 @@ bin/magento module:enable Siteation_StorePaymentLogos
 
 ## How to use
 
-<!-- TODO: how to -->
+By default, this Magento module displays all enabled payment methods as icons in your theme's footer and requires no configuration.
 
-## Customization options
+If you want to exclude specific payment icons,
+simply go to Stores → Configuration → Sales → Sales → Payment Icons.
 
-### Generate your own svg sprite
+If you'd like to display payment icons in other areas of your site,
+you can use the convenient options offered by the viewModel from our Storeinfo Payment module.
 
-We use the npm package [Svg sprite] using the [CLI options](https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md).
+This feature also provides additional functions for more flexibility in showing your configured payment methods to be displayed on your store.
 
-If you want to create your own payment icons or just customize this version you need to copy the sprites in the assets to your own theme or module.
+## Generate your own svg sprite
 
-In your theme or module install with npm [Svg sprite]
+To customize the payment icons, you can copy the sprite assets into your own theme or module.
+
+After that, you can install the [Svg sprite] package using npm in your theme or module to manage and generate the sprite.
+
+To do this, follow the steps below:
+
+1. Copy the sprite assets from the original source to your own theme or module.
+2. Navigate to your theme or module's root directory and install the [Svg sprite] package using the following command:
+
+```bash
+npm install svg-sprite
+```
+
+3. After installation, you can use the [Svg sprite CLI](https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md) options to generate the sprite in your desired format. Refer to the package documentation for more details on the available CLI options.
+4. Once the sprite is generated, you can use it in your application or website as needed.
 
 [Svg sprite]: https://www.npmjs.com/package/svg-sprite
 
-### Supported Payment options
+## Supported Payment options
 
 <!-- TODO update filter -->
 <!-- TODO create missing icons -->
