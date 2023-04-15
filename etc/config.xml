@@ -18,6 +18,7 @@
                         "Eps": "eps",
                         "Giftcard": "giftcard",
                         "Giropay": "giropay",
+                        "Google Pay": "googlepay",
                         "iDeal": "ideal",
                         "CBC": "cbc",
                         "IN3": "in3",
@@ -29,7 +30,7 @@
                         "Sofort": "sofort"
                     }
                 </payment_filter_options>
-                <payment_icons>afterpay,applepay,bancontact,banktransfer,belfius,creditcard,sepa,eps,giftcard,giropay,ideal,cbc,in3,klarna,mybank,paypal,paysafecard,przelewy24,sofort</payment_icons>
+                <payment_icons>afterpay,applepay,bancontact,banktransfer,belfius,creditcard,sepa,eps,giftcard,giropay,googlepay,ideal,cbc,in3,klarna,mybank,paypal,paysafecard,przelewy24,sofort</payment_icons>
             </payment>
         </siteation_payment>
     </default>

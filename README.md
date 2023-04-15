@@ -31,36 +31,36 @@ https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md
 
 ### Supported Payment options
 
-| Options          | Mollie       | PayNL      | MultiSafePay | has icon |
-| ---------------- | ------------ | ---------- | ------------ | -------- |
-| afterpay/riverty | x            | x          | x            | x        |
-| alipay           |              | x          | x            |          |
-| amazonpay        |              | x          | x            |          |
-| american express |              | x          | = Creditcard |          |
-| applepay         | x            | x          | x            | x        |
-| bancontact       | x            | x          | x            | x        |
-| banktransfer     | x            |            | x            | x        |
-| belfius          | x            |            | x            | x        |
-| biller           |              | x          | x            |          |
-| cbc              |              |            | x            |          |
-| creditcard       | x            |            | x            | x        |
-| direct-debit     |              |            | x            |          |
-| dotpay           |              |            | x            |          |
-| eps              | x            | x          | x            | x        |
-| giftcard         | x            | x          |              |          |
-| cadeau           |              | = giftcard |              |          |
-| giropay          | x            | x          | x            | x        |
-| googlepay        |              | x          | x            | x        |
-| ideal            | x            | x          |              | x        |
-| in3              | x            | x          | x            | x        |
-| kbc_cbc          | x            |            | x            |          |
-| klarna           | x            | x          |              | x        |
+| Options          | Mollie       | PayNL        | MultiSafePay | has icon |
+| ---------------- | ------------ | ------------ | ------------ | -------- |
+| afterpay/riverty | x            | x            | x            | x        |
+| alipay           |              | x            | x            |          |
+| amazonpay        |              | x            | x            |          |
+| american express |              | x            | = Creditcard |          |
+| applepay         | x            | x            | x            | x        |
+| bancontact       | x            | x            | x            | x        |
+| banktransfer     | x            |              | x            | x        |
+| belfius          | x            |              | x            | x        |
+| biller           |              | x            | x            |          |
+| cbc              |              |              | x            |          |
+| creditcard       | x            |              | x            | x        |
+| direct-debit     |              |              | x            |          |
+| dotpay           |              |              | x            |          |
+| eps              | x            | x            | x            | x        |
+| giftcard         | x            | x            |              |          |
+| cadeau           |              | = giftcard   |              |          |
+| giropay          | x            | x            | x            | x        |
+| googlepay        |              | x            | x            | x        |
+| ideal            | x            | x            |              | x        |
+| in3              | x            | x            | x            | x        |
+| kbc/cbc          | x            |              | x            |          |
+| klarna           | x            | x            |              | x        |
 | maestro          | = Creditcard | = Creditcard | = Creditcard |          |
 | mastercard       |              | = Creditcard | = Creditcard |          |
-| mybank           | x            |            | x            |          |
-| paypal           | x            | x          | x            |          |
-| paysafecard      | x            |            | x            |          |
-| przelewy24       | x            | x          |              |          |
-| visa             | = Creditcard |            | = Creditcard |          |
-| sepa             | x            |            |              |          |
-| sofort           | x            | x          |              |          |
+| mybank           | x            |              | x            |          |
+| paypal           | x            | x            | x            |          |
+| paysafecard      | x            |              | x            |          |
+| przelewy24       | x            | x            |              |          |
+| visa             | = Creditcard |              | = Creditcard |          |
+| sepa             | x            |              |              |          |
+| sofort           | x            | x            |              |          |
