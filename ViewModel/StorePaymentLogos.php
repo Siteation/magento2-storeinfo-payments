@@ -31,6 +31,9 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
+     * Get all enabled payment options,
+     * and return them as array with the title and code
+     *
      * @return array[]
      */
     public function getActivePaymentMethods(): array
@@ -51,19 +54,19 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
-     * Gets the static selected values
+     * Get the filtered payment options
      *
      * @return string[]
      */
     public function selectedPaymentMethods(): array
     {
-        $data = $this->scopeConfig->getValue('siteation_payment/payment/payment_icons', ScopeInterface::SCOPE_STORE);
+        $data = $this->scopeConfig->getValue('siteation_payment/payment/payment_options_show', ScopeInterface::SCOPE_STORE);
         $options = $data ? explode(",", $data) : [];
         return $options;
     }
 
     /**
-     * filter only names
+     * Get only the names from all active payment options
      *
      * @return string[]
      */
@@ -80,7 +83,7 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
-     * filter only codes
+     * Get only the codes from all active payment options
      *
      * @return string[]
      */
@@ -97,7 +100,9 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
-     * Filter based on both the ActivePaymentMethods and the selectedPaymentMethods
+     * Create an filterd array with only the payment options that are also in the filter options,
+     * and return the filter names with no duplicates,
+     * so it is easier to use them for the loop in the frontend logic
      *
      * @return string[]
      */
