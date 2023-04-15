@@ -27,14 +27,13 @@ bin/magento module:enable Siteation_StorePaymentLogos
 
 ### Generate your own svg sprite
 
-We use the npm package [Svg sprite](sprite) using the [CLI options](sprite-cli).
+We use the npm package [Svg sprite] using the [CLI options](https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md).
 
 If you want to create your own payment icons or just customize this version you need to copy the sprites in the assets to your own theme or module.
 
-In your theme or module install with npm [Svg sprite](sprite)
+In your theme or module install with npm [Svg sprite]
 
-[sprite]: https://www.npmjs.com/package/svg-sprite
-[sprite-cli]: https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md
+[Svg sprite]: https://www.npmjs.com/package/svg-sprite
 
 ### Supported Payment options
 
