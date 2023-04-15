@@ -1,11 +1,11 @@
-# Siteation - Magento 2 StorePaymentLogos
+# Siteation - Magento 2 StoreInfo Payment Logos
 
-[![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-module-storeinfo-payment-logos?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-module-storeinfo-payment-logos)
+[![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-agento2-storeinfo-payment-logos?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-agento2-storeinfo-payment-logos)
 ![Supported Magento Versions](https://img.shields.io/badge/magento-%202.4-brightgreen.svg?logo=magento&longCache=true&style=for-the-badge)
 [![Hyvä Themes Supported](https://img.shields.io/badge/Hyva_Themes-Supported-3df0af.svg?longCache=true&style=for-the-badge)](https://hyva.io/)
-![License](https://img.shields.io/github/license/Siteation/magento2-module-storeinfo-payment-logos?color=%23234&style=for-the-badge)
+![License](https://img.shields.io/github/license/Siteation/magento2-agento2-storeinfo-payment-logos?color=%23234&style=for-the-badge)
 
-The Siteation StorePaymentLogos module simplifies the process of displaying your configured payment methods on your store.
+The Siteation StoreInfo Payment Logos module simplifies the process of displaying your configured payment methods on your store.
 
 All you need to do is enable your payment methods as you would for the checkout payment options.
 
@@ -16,12 +16,10 @@ This module will then display the same options as payment icons in your footer o
 Install the package via;
 
 ```bash
-composer require siteation/magento2-storepayment-logos
-bin/magento module:enable Siteation_StorePaymentLogos
+composer require siteation/magento2-storeinfo-payment-logos
+bin/magento module:enable Siteation_StoreInfoPaymentLogos
+bin/magento setup:upgrade
 ```
-
-> This Module requires Magento 2.4 or higher!
-> For more requirements see the `composer.json`.
 
 ## How to use
 
@@ -77,7 +75,6 @@ npm install svg-sprite
 | dotpay           |              |              |       x        |          |
 | eps              |      x       |      x       |       x        |    x     |
 | giftcard         |      x       |      x       |                |          |
-| cadeau           |              |  = giftcard  |                |          |
 | giropay          |      x       |      x       |       x        |    x     |
 | googlepay        |              |      x       |       x        |    x     |
 | ideal            |      x       |      x       |                |    x     |
@@ -94,9 +91,11 @@ npm install svg-sprite
 | sepa             |      x       |              |                |    x     |
 | sofort           |      x       |      x       |                |    x     |
 
-_Icons with `+` are only avaible in our icon pack,_
-_but are excludes from the sprite file,_
-_since the payment icon is aliased to another method_
+> **Info**: Any gift option with `cadeau` in the name will also show the giftcard icon
+
+> **Info**: Icons with `+` are only avaible in our icon pack,
+> but are excludes from the sprite file,
+> since the payment icon is aliased to another method
 
 [Mollie]: https://github.com/mollie/magento2
 [PayNL]: https://github.com/paynl/magento2-plugin

@@ -1,6 +1,7 @@
 # EditorConfig helps developers define and maintain consistent
 # coding styles between different editors and IDEs
 # http://editorconfig.org
+
 root = true
 
 [*]
@@ -11,16 +12,12 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{md,mdx}]
+[*.md]
 indent_size = 4
 trim_trailing_whitespace = false
 max_line_length = 80
 
-[*.{css,less,sass,scss,js,ts,mjs}]
-indent_size = 4
-max_line_length = 80
-
-[*.{html,vue,jsx,tsx}]
+[*.{html,css,less,scss,js}]
 indent_size = 4
 max_line_length = 80
 

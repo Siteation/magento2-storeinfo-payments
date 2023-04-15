@@ -13,7 +13,7 @@
             showInWebsite="1"
             showInStore="1"
         >
-            <label>Payment Icons</label>
+            <label>Payment Logos</label>
             <tab>sales</tab>
             <resource>Magento_Config::payment</resource>
             <group
@@ -25,9 +25,9 @@
                 showInWebsite="1"
                 showInStore="1"
             >
-                <label>Payment Icons</label>
+                <label>Payment Logos</label>
                 <field
-                    id="payment_icons"
+                    id="payment_options_show"
                     translate="label"
                     type="multiselect"
                     sortOrder="1"
@@ -36,8 +36,8 @@
                     showInStore="1"
                     canRestore="1"
                 >
-                    <label>Payment Icons to show</label>
-                    <source_model>Siteation\StorePaymentLogos\Model\Config\PaymentOptions</source_model>
+                    <label>Payment Logos to show</label>
+                    <source_model>Siteation\StoreInfoPaymentLogos\Model\Config\PaymentOptions</source_model>
                 </field>
             </group>
         </section>

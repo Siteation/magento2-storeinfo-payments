@@ -1,6 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Siteation\StorePaymentLogos\ViewModel;
+/**
+ * @author Siteation (https://siteation.dev/)
+ * @copyright Copyright 2023 Siteation (https://siteation.dev/)
+ * @license MIT
+ */
+
+namespace Siteation\StoreInfoPaymentLogos\ViewModel;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;

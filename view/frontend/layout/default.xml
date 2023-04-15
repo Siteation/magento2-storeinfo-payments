@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
     <body>
         <referenceBlock name="footer-content">
             <block
                 name="siteation.payment.logos"
                 as="payment-logos"
-                template="Siteation_StorePaymentLogos::payment-logos.phtml"
+                template="Siteation_StoreInfoPaymentLogos::payment-logos.phtml"
                 after="-"
             />
         </referenceBlock>

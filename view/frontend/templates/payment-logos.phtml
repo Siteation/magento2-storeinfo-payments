@@ -3,7 +3,7 @@
 use Hyva\Theme\Model\ViewModelRegistry;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\Escaper;
-use Siteation\StorePaymentLogos\ViewModel\StorePaymentLogos;
+use Siteation\StoreInfoPaymentLogos\ViewModel\StorePaymentLogos;
 
 /** @var ViewModelRegistry $viewModels */
 /** @var Template $block */
@@ -12,7 +12,7 @@ use Siteation\StorePaymentLogos\ViewModel\StorePaymentLogos;
 /** @var StorePaymentLogos $storePaymentLogos */
 $storePaymentLogos = $viewModels->require(StorePaymentLogos::class);
 $paymentOptions = $storePaymentLogos->getPaymentMethods();
-$paymentIconPath = 'Siteation_StorePaymentLogos::images/payment-logos.svg';
+$paymentIconPath = 'Siteation_StoreInfoPaymentLogos::images/payment-logos.svg';
 
 if (!$paymentOptions) {
     return '';

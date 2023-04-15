@@ -1,9 +1,9 @@
 {
-  "name": "siteation/magento2-storepayment-logos",
+  "name": "siteation/magento2-storeinfo-payment-logos",
   "version": "1.0.0",
   "license": "MIT",
   "type": "magento2-module",
-  "description": "Get your all store information with ease",
+  "description": "The Siteation StoreInfo Payment Logos module simplifies the process of displaying your configured payment methods on your store",
   "readme": "README.md",
   "keywords": [
     "magento2",
@@ -29,7 +29,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Siteation\\StorePaymentLogos\\": ""
+      "Siteation\\StoreInfoPaymentLogos\\": ""
     }
   }
 }

@@ -1,7 +1,10 @@
 {
-  "name": "magento2-storepayment-logos",
+  "name": "magento2-storeinfo-payment-logos",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Siteation StoreInfo Payment Logos module simplifies the process of displaying your configured payment methods on your store",
+  "private": true,
+  "license": "MIT",
+  "author": "Siteation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,13 +14,6 @@
     "type": "git",
     "url": "git+https://github.com/Siteation/magento2-storeinfo-payment-logos.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Siteation/magento2-storeinfo-payment-logos/issues"
-  },
-  "homepage": "https://github.com/Siteation/magento2-storeinfo-payment-logos#readme",
   "devDependencies": {
     "svg-sprite": "^2.0.2"
   }
