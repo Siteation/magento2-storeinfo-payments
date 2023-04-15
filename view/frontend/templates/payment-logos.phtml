@@ -18,24 +18,8 @@ if (!$paymentOptions) {
     return '';
 }
 ?>
-
 <ul class="flex flex-wrap gap-4">
     <?php foreach ($paymentOptions as $option): ?>
-        <?php if ($option === "creditcard"): ?>
-            <li class="icon-maestro">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
-                    <title>maestro</title>
-                    <use href="<?= $block->getViewFileUrl($paymentIconPath); ?>#maestro" />
-                </svg>
-            </li>
-            <li class="icon-visa">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
-                    <title>visa</title>
-                    <use href="<?= $block->getViewFileUrl($paymentIconPath); ?>#visa" />
-                </svg>
-            </li>
-            <?php continue; ?>
-        <?php endif; ?>
         <li class="icon-<?= $escaper->escapeHtml($option) ?>">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
                 <title><?= $escaper->escapeHtml($option) ?></title>

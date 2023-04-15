@@ -28,3 +28,27 @@ bin/magento module:enable Siteation_StorePaymentLogos
 <!-- TODO: how to -->
 
 https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md
+
+### Supported Payment options
+
+| Options | Mollie | PayNL | MultiSafePay |
+| - | - | - | - |
+| afterpay | ✅ | | |
+| applepay | ✅ | | |
+| bancontact | ✅ | | |
+| banktransfer | ✅ | | |
+| belfius | ✅ | | |
+| creditcard | ✅ | | |
+| sepa | ✅ | | |
+| eps | ✅ | | |
+| giftcard | ✅ | | |
+| giropay | ✅ | | |
+| ideal | ✅ | | |
+| cbc | ✅ | | |
+| in3 | ✅ | | |
+| klarna | ✅ | | |
+| mybank | ✅ | | |
+| paypal | ✅ | | |
+| paysafecard | ✅ | | |
+| przelewy24 | ✅ | | |
+| sofort | ✅ | | |
