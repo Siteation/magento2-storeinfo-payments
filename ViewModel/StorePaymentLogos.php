@@ -129,7 +129,7 @@ class StorePaymentLogos implements ArgumentInterface
             // Iterate through the available payment methods and apply a filter to obtain the active ones
             foreach ($filters as $filter) {
                 if (str_contains($payment, $filter)) {
-                    $methods[] = $payment;
+                    $methods[] = $filter;
                 }
             }
         }

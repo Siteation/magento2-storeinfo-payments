@@ -8,7 +8,7 @@
             <payment>
                 <payment_filter_options>
                     {
-                        "AfterPay": "afterpay",
+                        "Riverty": "riverty",
                         "Apple Pay": "applepay",
                         "Bancontact": "bancontact",
                         "Bank Transfer": "banktransfer",
@@ -30,7 +30,7 @@
                         "Sofort": "sofort"
                     }
                 </payment_filter_options>
-                <payment_icons>afterpay,applepay,bancontact,banktransfer,belfius,creditcard,sepa,eps,giftcard,giropay,googlepay,ideal,cbc,in3,klarna,mybank,paypal,paysafecard,przelewy24,sofort</payment_icons>
+                <payment_icons>riverty,applepay,bancontact,banktransfer,belfius,creditcard,sepa,eps,giftcard,giropay,googlepay,ideal,cbc,in3,klarna,mybank,paypal,paysafecard,przelewy24,sofort</payment_icons>
             </payment>
         </siteation_payment>
     </default>

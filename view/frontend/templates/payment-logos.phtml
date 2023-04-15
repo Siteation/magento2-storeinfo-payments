@@ -18,7 +18,8 @@ if (!$paymentOptions) {
     return '';
 }
 ?>
-<ul class="flex flex-wrap gap-4">
+<!-- <pre><?//= var_dump($storePaymentLogos->getActivePaymentMethods()); ?></pre> -->
+<ul class="flex flex-wrap gap-4 max-w-md">
     <?php foreach ($paymentOptions as $option): ?>
         <li class="icon-<?= $escaper->escapeHtml($option) ?>">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
