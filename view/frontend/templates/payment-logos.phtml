@@ -12,19 +12,19 @@ use Siteation\StoreInfoPaymentLogos\ViewModel\StorePaymentLogos;
 /** @var StorePaymentLogos $storePaymentLogos */
 $storePaymentLogos = $viewModels->require(StorePaymentLogos::class);
 $paymentOptions = $storePaymentLogos->getPaymentMethods();
-$paymentIconPath = 'Siteation_StoreInfoPaymentLogos::images/payment-logos.svg';
+$paymentLogosBasePath = 'Siteation_StoreInfoPaymentLogos::images/payment-logos.svg';
 
 if (!$paymentOptions) {
     return '';
 }
 ?>
-<!-- <pre><?//= var_dump($storePaymentLogos->getActivePaymentMethods()); ?></pre> -->
-<ul class="flex flex-wrap gap-4 max-w-md">
+
+<ul class="payment-logos flex flex-wrap gap-4 max-w-md">
     <?php foreach ($paymentOptions as $option): ?>
-        <li class="icon-<?= $escaper->escapeHtml($option) ?>">
+        <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
                 <title><?= $escaper->escapeHtml($option) ?></title>
-                <use href="<?= $block->getViewFileUrl($paymentIconPath); ?>#<?= $escaper->escapeHtml($option) ?>" />
+                <use href="<?= $block->getViewFileUrl($paymentLogosBasePath); ?>#<?= $escaper->escapeHtml($option) ?>" />
             </svg>
         </li>
     <?php endforeach; ?>
