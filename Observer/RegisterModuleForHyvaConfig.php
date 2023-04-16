@@ -6,7 +6,7 @@
  * @license MIT
  */
 
-namespace Siteation\Share\Observer;
+namespace Siteation\StoreInfoPaymentLogos\Observer;
 
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Event\Observer;
