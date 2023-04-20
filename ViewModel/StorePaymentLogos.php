@@ -120,8 +120,8 @@ class StorePaymentLogos implements ArgumentInterface
                 $payment = "riverty";
             }
 
-            if (str_contains($code, "_kbc")) {
-                $payment = "_cbc";
+            if (str_contains($code, "_cbc")) {
+                $payment = "_kbc";
             }
 
             if (str_contains($code, "cadeau")) {
