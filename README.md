@@ -79,7 +79,7 @@ npm install svg-sprite
 | googlepay        |              |      x       |       x        |     x     |
 | ideal            |      x       |      x       |                |     x     |
 | in3              |      x       |      x       |       x        |     x     |
-| kbc/cbc          |      x       |              |       x        |           |
+| kbc/cbc          |      x       |              |       x        |     x     |
 | klarna           |      x       |      x       |                |     x     |
 | maestro          | = creditcard | = creditcard |  = creditcard  |     +     |
 | mastercard       | = creditcard | = creditcard |  = creditcard  |     +     |
