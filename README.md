@@ -55,26 +55,21 @@ npm install svg-sprite
 
 ## Supported Payment options
 
-<!-- TODO update filter -->
-<!-- TODO create missing icons -->
-<!-- TODO check payment codes for provider -->
-
 |                  |   [Mollie]   |   [PayNL]    | [MultiSafePay] | Has logos |
 | ---------------- | :----------: | :----------: | :------------: | :-------: |
 | afterpay/riverty |              |      x       |       x        |     x     |
-| alipay           |              |      x       |       x        |           |
-| amazonpay        |              |      x       |       x        |           |
+| alipay           |              |      x       |       x        |     x     |
+| amazonpay        |              |      x       |       x        |     x     |
 | american express | = creditcard | = creditcard |  = creditcard  |     +     |
 | applepay         |      x       |      x       |       x        |     x     |
 | bancontact       |      x       |      x       |       x        |     x     |
 | banktransfer     |      x       |              |       x        |     x     |
 | belfius          |      x       |              |       x        |     x     |
-| biller           |              |      x       |       x        |           |
+| biller           |              |      x       |       x        |     x     |
 | creditcard       |      x       |              |       x        |     x     |
-| direct-debit     |              |              |       x        |           |
-| dotpay           |              |              |       x        |           |
+| direct-debit     |              |              |       x        |     x     |
 | eps              |      x       |      x       |       x        |     x     |
-| giftcard         |      x       |      x       |                |           |
+| giftcard         |      x       |      x       |                |     x     |
 | giropay          |      x       |      x       |       x        |     x     |
 | googlepay        |              |      x       |       x        |     x     |
 | ideal            |      x       |      x       |                |     x     |
@@ -83,10 +78,10 @@ npm install svg-sprite
 | klarna           |      x       |      x       |                |     x     |
 | maestro          | = creditcard | = creditcard |  = creditcard  |     +     |
 | mastercard       | = creditcard | = creditcard |  = creditcard  |     +     |
-| mybank           |      x       |              |       x        |           |
+| mybank           |      x       |              |       x        |     x     |
 | paypal           |      x       |      x       |       x        |     x     |
-| paysafecard      |      x       |              |       x        |           |
-| przelewy24       |      x       |      x       |                |           |
+| paysafecard      |      x       |              |       x        |     x     |
+| przelewy24       |      x       |      x       |                |     x     |
 | visa             | = creditcard | = creditcard |  = creditcard  |     +     |
 | sepa             |      x       |              |                |     x     |
 | sofort           |      x       |      x       |                |     x     |

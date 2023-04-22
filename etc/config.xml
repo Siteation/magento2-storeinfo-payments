@@ -8,29 +8,33 @@
             <payment>
                 <payment_filter_options>
                     {
-                        "Riverty": "riverty",
+                        "AliPay": "alipay",
+                        "Amazon Pay": "amazonpay",
                         "Apple Pay": "applepay",
                         "Bancontact": "bancontact",
                         "Bank Transfer": "banktransfer",
                         "Belfius": "belfius",
+                        "Biller": "biller",
                         "Creditcard": "creditcard",
-                        "Sepa": "sepa",
+                        "Direct Debit": "direct-debit",
                         "Eps": "eps",
                         "Giftcard": "giftcard",
                         "Giropay": "giropay",
                         "Google Pay": "googlepay",
                         "iDeal": "ideal",
-                        "KBC": "kbc",
                         "IN3": "in3",
+                        "KBC": "kbc",
                         "Klarna": "klarna",
                         "MyBank": "mybank",
                         "PayPal": "paypal",
-                        "Paysafe Card": "paysafecard",
+                        "PaySafe Card": "paysafecard",
                         "Przelewy 24": "przelewy24",
+                        "Riverty": "riverty",
+                        "Sepa": "sepa",
                         "Sofort": "sofort"
                     }
                 </payment_filter_options>
-                <payment_options_show>riverty,applepay,bancontact,banktransfer,belfius,creditcard,sepa,eps,giftcard,giropay,googlepay,ideal,kbc,in3,klarna,mybank,paypal,paysafecard,przelewy24,sofort</payment_options_show>
+                <payment_options_show>alipay,amazonpay,applepay,bancontact,banktransfer,belfius,biller,creditcard,direct-debit,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,mybank,paypal,paysafecard,przelewy24,riverty,sepa,sofort</payment_options_show>
             </payment>
         </siteation_payment>
     </default>
