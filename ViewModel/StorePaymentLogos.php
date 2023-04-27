@@ -100,7 +100,7 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
-     * Filterd any payment methods that have changed in name or are a dubblicate of anohter name
+     * Filtered any payment methods that have changed in name or are a duplicate of another name
      *
      * @param string $method
      * @return string
