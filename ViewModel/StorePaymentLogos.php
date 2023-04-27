@@ -100,49 +100,65 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
+     * Filterd any payment methods that have changed in name or are a dubblicate of anohter name
+     *
+     * @param string $method
+     * @return string
+     */
+    private function filterPaymentMethods($method): string
+    {
+        if (str_contains($method, "_afterpay")) {
+            return "riverty";
+        }
+
+        if (str_contains($method, "_cbc")) {
+            return "_kbc";
+        }
+
+        if (str_contains($method, "cadeau")) {
+            return "giftcard";
+        }
+
+        if (
+            str_contains($method, "_visa") ||
+            str_contains($method, "_maestro") ||
+            str_contains($method, "_amex") ||
+            str_contains($method, "_mastercard")
+        ) {
+            return "creditcard";
+        }
+
+        return $method;
+    }
+
+    /**
      * Create an filterd array with only the payment options that are also in the filter options,
      * and return the filter names with no duplicates,
      * so it is easier to use them for the loop in the frontend logic
      *
+     * @param bool $sort
      * @return string[]
      */
-    public function getPaymentMethods(): array
+    public function getPaymentMethods($sort = false): array
     {
         $filters = $this->selectedPaymentMethods();
         $codes = $this->getActivePaymentCodes();
         $methods = array();
 
         foreach ($codes as $code) {
-            $payment = $code;
+            $payment = $this->filterPaymentMethods($code);
 
-            // Filter aliases
-            if (str_contains($code, "_afterpay")) {
-                $payment = "riverty";
-            }
-
-            if (str_contains($code, "_cbc")) {
-                $payment = "_kbc";
-            }
-
-            if (str_contains($code, "cadeau")) {
-                $payment = "giftcard";
-            }
-
-            if (
-                str_contains($code, "_visa") ||
-                str_contains($code, "_maestro") ||
-                str_contains($code, "_amex") ||
-                str_contains($code, "_mastercard")
-            ) {
-                $payment = "creditcard";
-            }
-
-            // Iterate through the available payment methods and apply a filter to obtain the active ones
+            // Iterate through the available payment methods,
+            // and apply a filter to obtain the active ones
             foreach ($filters as $filter) {
                 if (str_contains($payment, $filter)) {
                     $methods[] = $filter;
                 }
             }
+        }
+
+        if ($sort) {
+            sort($methods);
         }
 
         // Return the array without any duplicates
