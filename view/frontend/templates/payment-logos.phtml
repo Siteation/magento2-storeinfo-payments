@@ -22,7 +22,7 @@ if (!$paymentOptions) {
 <ul class="payment-logos flex flex-wrap gap-4 max-w-md">
     <?php foreach ($paymentOptions as $option): ?>
         <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32">
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="36">
                 <title><?= $escaper->escapeHtml($option) ?></title>
                 <use href="<?= $block->getViewFileUrl($paymentLogosBasePath); ?>#<?= $escaper->escapeHtml($option) ?>" />
             </svg>
