@@ -132,7 +132,7 @@ class StorePaymentLogos implements ArgumentInterface
     }
 
     /**
-     * Create an filterd array with only the payment options that are also in the filter options,
+     * Create an filtered array with only the payment options that are also in the filter options,
      * and return the filter names with no duplicates,
      * so it is easier to use them for the loop in the frontend logic
      *
