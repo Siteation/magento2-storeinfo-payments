@@ -60,8 +60,12 @@ class StorePaymentLogos implements ArgumentInterface
      */
     public function selectedPaymentMethods(): array
     {
-        $data = $this->scopeConfig->getValue('siteation_payment/payment/payment_options_show', ScopeInterface::SCOPE_STORE);
+        $data = $this->scopeConfig->getValue(
+            'siteation_payment/payment/payment_options_show',
+            ScopeInterface::SCOPE_STORE
+        );
         $options = $data ? explode(",", $data) : [];
+
         return $options;
     }
 
