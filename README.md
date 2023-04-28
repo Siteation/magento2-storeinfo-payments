@@ -1,6 +1,6 @@
 # Siteation - Magento 2 StoreInfo Payments
 
-[![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-agento2-storeinfo-payments?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-agento2-storeinfo-payments)
+[![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-storeinfo-payments?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-storeinfo-payments)
 ![Supported Magento Versions](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/magento-2.4-support.png)
 [![Hyvä Themes Module](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/hyva-module.png)](https://hyva.io/)
 [![License](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/license.png)](https://github.com/Siteation/magento2-storeinfo-payments/blob/main/LICENSE)
