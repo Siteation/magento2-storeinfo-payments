@@ -8,9 +8,16 @@
             <block
                 name="siteation.payment.logos"
                 as="payment-logos"
-                template="Siteation_StoreInfoPayments::payment-logos.phtml"
+                template="Siteation_StoreInfoPayments::footer/payment-logos.phtml"
                 after="-"
             />
         </referenceBlock>
+
+        <referenceContainer name="cart-drawer.bottom">
+            <block
+                name="siteation.payment.logos.cart-drawer"
+                template="Siteation_StoreInfoPayments::cart/payment-logos.phtml"
+            />
+        </referenceContainer>
     </body>
 </page>

@@ -1,0 +1,32 @@
+<?php declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
+use Siteation\StoreInfoPayments\ViewModel\StorePayments;
+
+/** @var ViewModelRegistry $viewModels */
+/** @var Template $block */
+/** @var Escaper $escaper */
+
+/** @var PaymentIcons $paymentIcons */
+$paymentIcons = $viewModels->require(PaymentIcons::class);
+
+/** @var StorePayments $storePayments */
+$storePayments = $viewModels->require(StorePayments::class);
+
+$paymentOptions = $storePayments->getPaymentMethods();
+
+if (!$paymentOptions) {
+    return '';
+}
+?>
+
+<ul class="payment-logos px-4 py-6 bg-gray-100 flex flex-wrap justify-center gap-4">
+    <?php foreach ($paymentOptions as $option): ?>
+        <li>
+            <?= $paymentIcons->renderHtml($option, '', 48, 32); ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
