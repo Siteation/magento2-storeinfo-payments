@@ -6,7 +6,7 @@
  * @license MIT
  */
 
-namespace Siteation\StoreInfoPaymentLogos\Model\Config;
+namespace Siteation\StoreInfoPayments\Model\Config;
 
 use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
@@ -37,7 +37,9 @@ class PaymentOptions implements OptionSourceInterface
      */
     public function toOptionArray(): array
     {
-        $optionsJson = json_decode($this->getStoreConfig('siteation_payment/payment/payment_filter_options'));
+        $optionsJson = json_decode($this->getStoreConfig(
+            'siteation_storeinfo_payment/payment/payment_filter_options'
+        ));
         $options = array();
 
         foreach ($optionsJson as $key => $option) {

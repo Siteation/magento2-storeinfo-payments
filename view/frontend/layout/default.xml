@@ -8,7 +8,7 @@
             <block
                 name="siteation.payment.logos"
                 as="payment-logos"
-                template="Siteation_StoreInfoPaymentLogos::payment-logos.phtml"
+                template="Siteation_StoreInfoPayments::payment-logos.phtml"
                 after="-"
             />
         </referenceBlock>

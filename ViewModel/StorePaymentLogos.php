@@ -6,14 +6,14 @@
  * @license MIT
  */
 
-namespace Siteation\StoreInfoPaymentLogos\ViewModel;
+namespace Siteation\StoreInfoPayments\ViewModel;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Payment\Model\Config;
 use Magento\Store\Model\ScopeInterface;
 
-class StorePaymentLogos implements ArgumentInterface
+class StorePayments implements ArgumentInterface
 {
     protected ScopeConfigInterface $scopeConfig;
     protected Config $paymentModelConfig;
@@ -61,7 +61,7 @@ class StorePaymentLogos implements ArgumentInterface
     public function selectedPaymentMethods(): array
     {
         $data = $this->scopeConfig->getValue(
-            'siteation_payment/payment/payment_options_show',
+            'siteation_storeinfo_payment/payment/payment_options_show',
             ScopeInterface::SCOPE_STORE
         );
         $options = $data ? explode(",", $data) : [];
@@ -143,7 +143,7 @@ class StorePaymentLogos implements ArgumentInterface
      * @param bool $sort
      * @return string[]
      */
-    public function getPaymentMethods($sort = false): array
+    public function getPaymentMethods($sort = true): array
     {
         $filters = $this->selectedPaymentMethods();
         $codes = $this->getActivePaymentCodes();

@@ -4,8 +4,12 @@
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd"
 >
     <system>
+        <tab id="siteation" sortOrder="999" translate="label">
+            <label>Siteation</label>
+        </tab>
+
         <section
-            id="siteation_payment"
+            id="siteation_storeinfo_payment"
             translate="label"
             type="text"
             sortOrder="401"
@@ -13,8 +17,8 @@
             showInWebsite="1"
             showInStore="1"
         >
-            <label>Payment Logos</label>
-            <tab>sales</tab>
+            <label>Payment Methods</label>
+            <tab>siteation</tab>
             <resource>Magento_Config::payment</resource>
             <group
                 id="payment"
@@ -25,7 +29,7 @@
                 showInWebsite="1"
                 showInStore="1"
             >
-                <label>Payment Logos</label>
+                <label>Payment Methods</label>
                 <field
                     id="payment_options_show"
                     translate="label"
@@ -36,8 +40,8 @@
                     showInStore="1"
                     canRestore="1"
                 >
-                    <label>Payment Logos to show</label>
-                    <source_model>Siteation\StoreInfoPaymentLogos\Model\Config\PaymentOptions</source_model>
+                    <label>Payment Methods to show</label>
+                    <source_model>Siteation\StoreInfoPayments\Model\Config\PaymentOptions</source_model>
                 </field>
             </group>
         </section>

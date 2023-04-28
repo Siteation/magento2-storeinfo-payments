@@ -5,8 +5,8 @@
 >
     <event name="hyva_config_generate_before">
         <observer
-            name="Siteation_StoreInfoPaymentLogos"
-            instance="Siteation\StoreInfoPaymentLogos\Observer\RegisterModuleForHyvaConfig"
+            name="Siteation_StoreInfoPayments"
+            instance="Siteation\StoreInfoPayments\Observer\RegisterModuleForHyvaConfig"
         />
     </event>
 </config>

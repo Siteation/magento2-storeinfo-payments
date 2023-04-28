@@ -3,12 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"
 >
-    <module name="Siteation_StoreInfoPaymentLogos">
+    <module name="Siteation_StoreInfoPayments">
         <sequence>
             <module name="Magento_Payment"/>
             <module name="Magento_Store"/>
             <module name="Magento_Backend"/>
             <module name="Hyva_Theme"/>
+            <module name="Siteation_HyvaIconsPayment"/>
         </sequence>
     </module>
 </config>

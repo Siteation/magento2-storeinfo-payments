@@ -1,96 +1,72 @@
-# Siteation - Magento 2 StoreInfo Payment Logos
+# Siteation - Magento 2 StoreInfo Payments
 
-[![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-agento2-storeinfo-payment-logos?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-agento2-storeinfo-payment-logos)
+[![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-agento2-storeinfo-payments?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-agento2-storeinfo-payments)
 ![Supported Magento Versions](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/magento-2.4-support.png)
 [![Hyvä Themes Module](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/hyva-module.png)](https://hyva.io/)
-[![License](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/license.png)](https://github.com/Siteation/magento2-storeinfo-payment-logos/blob/main/LICENSE)
+[![License](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/license.png)](https://github.com/Siteation/magento2-storeinfo-payments/blob/main/LICENSE)
 
-The Siteation StoreInfo Payment Logos module simplifies the process of displaying your configured payment methods on your store.
+The Siteation StoreInfo Payments module simplifies the process of displaying your configured payment methods on your store.
 
 All you need to do is enable your payment methods as you would for the checkout payment options.
 
-This module will then display the same options as payment logo in your footer or anywhere else you choose.
+This module will then display the same options as payment methods in your footer or anywhere else you choose.
 
 ## Installation
 
 Install the package via;
 
 ```bash
-composer require siteation/magento2-storeinfo-payment-logos
-bin/magento module:enable Siteation_StoreInfoPaymentLogos
+composer require siteation/magento2-storeinfo-payments
+bin/magento module:enable Siteation_StoreInfoPayments
 bin/magento setup:upgrade
 ```
 
 ## How to use
 
-By default, this Magento module displays all enabled payment methods as logos in your theme's footer and requires no configuration.
+By default, this Magento module displays all enabled payment methods as icons in your theme's footer and requires no configuration.
 
-If you want to exclude specific payment logos,
-simply go to Stores → Configuration → Sales → Sales → Payment logos.
+If you want to exclude specific payment methods,
+simply go to Stores → Configuration → Sales → Sales → Payment methods.
 
-If you'd like to display payment logos in other areas of your site,
+If you'd like to display payment methods in other areas of your site,
 you can use the convenient options offered by the viewModel from our Storeinfo Payment module.
 
 This feature also provides additional functions for more flexibility in showing your configured payment methods to be displayed on your store.
 
-## Generate your own svg sprite
-
-To customize the payment logos, you can copy the sprite assets into your own theme or module.
-
-After that, you can install the [Svg sprite] package using npm in your theme or module to manage and generate the sprite.
-
-To do this, follow the steps below:
-
-1. Copy the sprite assets from the original source to your own theme or module.
-2. Navigate to your theme or module's root directory and install the [Svg sprite] package using the following command:
-
-```bash
-npm install svg-sprite
-```
-
-3. After installation, you can use the [Svg sprite CLI](https://github.com/svg-sprite/svg-sprite/blob/main/docs/command-line.md) options to generate the sprite in your desired format. Refer to the package documentation for more details on the available CLI options.
-4. Once the sprite is generated, you can use it in your application or website as needed.
-
-[Svg sprite]: https://www.npmjs.com/package/svg-sprite
-
 ## Supported Payment options
 
-|                  |   [Mollie]   |   [PayNL]    | [MultiSafePay] | Has logos |
-| ---------------- | :----------: | :----------: | :------------: | :-------: |
-| afterpay/riverty |              |      x       |       x        |     x     |
-| alipay           |              |      x       |       x        |     x     |
-| amazonpay        |              |      x       |       x        |     x     |
-| american express | = creditcard | = creditcard |  = creditcard  |     +     |
-| applepay         |      x       |      x       |       x        |     x     |
-| bancontact       |      x       |      x       |       x        |     x     |
-| banktransfer     |      x       |              |       x        |     x     |
-| belfius          |      x       |              |       x        |     x     |
-| biller           |              |      x       |       x        |     x     |
-| creditcard       |      x       |              |       x        |     x     |
-| direct-debit     |              |              |       x        |     x     |
-| eps              |      x       |      x       |       x        |     x     |
-| giftcard         |      x       |      x       |                |     x     |
-| giropay          |      x       |      x       |       x        |     x     |
-| googlepay        |              |      x       |       x        |     x     |
-| ideal            |      x       |      x       |                |     x     |
-| in3              |      x       |      x       |       x        |     x     |
-| kbc/cbc          |      x       |              |       x        |     x     |
-| klarna           |      x       |      x       |                |     x     |
-| maestro          | = creditcard | = creditcard |  = creditcard  |     +     |
-| mastercard       | = creditcard | = creditcard |  = creditcard  |     +     |
-| mybank           |      x       |              |       x        |     x     |
-| paypal           |      x       |      x       |       x        |     x     |
-| paysafecard      |      x       |              |       x        |     x     |
-| przelewy24       |      x       |      x       |                |     x     |
-| visa             | = creditcard | = creditcard |  = creditcard  |     +     |
-| sepa             |      x       |              |                |     x     |
-| sofort           |      x       |      x       |                |     x     |
+|                  |   [Mollie]   |   [PayNL]    | [MultiSafePay] |
+| ---------------- | :----------: | :----------: | :------------: |
+| afterpay/riverty |              |      x       |       x        |
+| alipay           |              |      x       |       x        |
+| amazonpay        |              |      x       |       x        |
+| american express | = creditcard | = creditcard |  = creditcard  |
+| applepay         |      x       |      x       |       x        |
+| bancontact       |      x       |      x       |       x        |
+| banktransfer     |      x       |              |       x        |
+| belfius          |      x       |              |       x        |
+| biller           |              |      x       |       x        |
+| creditcard       |      x       |              |       x        |
+| direct-debit     |              |              |       x        |
+| eps              |      x       |      x       |       x        |
+| giftcard         |      x       |      x       |                |
+| giropay          |      x       |      x       |       x        |
+| googlepay        |              |      x       |       x        |
+| ideal            |      x       |      x       |                |
+| in3              |      x       |      x       |       x        |
+| kbc/cbc          |      x       |              |       x        |
+| klarna           |      x       |      x       |                |
+| maestro          | = creditcard | = creditcard |  = creditcard  |
+| mastercard       | = creditcard | = creditcard |  = creditcard  |
+| mybank           |      x       |              |       x        |
+| paypal           |      x       |      x       |       x        |
+| paysafecard      |      x       |              |       x        |
+| przelewy24       |      x       |      x       |                |
+| visa             | = creditcard | = creditcard |  = creditcard  |
+| sepa             |      x       |              |                |
+| sofort           |      x       |      x       |                |
 
-> **Info**: Any gift option with `cadeau` in the name will also show the giftcard logo
-
-> **Info**: logos with `+` are only avaible in our icon pack,
-> but are excludes from the sprite file,
-> since the payment logos is aliased to another method
+> **Info**: Any payment option with `cadeau` in its name will also show the giftcard method
 
 [Mollie]: https://github.com/mollie/magento2
 [PayNL]: https://github.com/paynl/magento2-plugin

@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Siteation_StoreInfoPaymentLogos',
+    'Siteation_StoreInfoPayments',
     __DIR__
 );

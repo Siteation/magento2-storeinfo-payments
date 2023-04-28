@@ -1,16 +1,16 @@
 {
-  "name": "siteation/magento2-storeinfo-payment-logos",
+  "name": "siteation/magento2-storeinfo-payments",
   "version": "1.0.0",
   "license": "MIT",
   "type": "magento2-module",
-  "description": "The Siteation StoreInfo Payment Logos module simplifies the process of displaying your configured payment methods on your store",
+  "description": "The Siteation StoreInfo Payments module simplifies the process of displaying your configured payment methods on your store",
   "readme": "README.md",
   "keywords": [
     "magento2",
     "magento2-module",
     "hyva",
     "hyva-module",
-    "payment-logos"
+    "payments"
   ],
   "authors": [
     {
@@ -22,14 +22,15 @@
   "require": {
     "magento/framework": ">=102.0.0",
     "magento/module-payment": "^100.0",
-    "hyva-themes/magento2-theme-module": "^1.1|^1.2"
+    "hyva-themes/magento2-theme-module": "^1.1|^1.2",
+    "siteation/magento2-hyva-icons-payment": "^1.0"
   },
   "autoload": {
     "files": [
       "registration.php"
     ],
     "psr-4": {
-      "Siteation\\StoreInfoPaymentLogos\\": ""
+      "Siteation\\StoreInfoPayments\\": ""
     }
   }
 }

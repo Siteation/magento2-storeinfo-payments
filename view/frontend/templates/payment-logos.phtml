@@ -3,29 +3,30 @@
 use Hyva\Theme\Model\ViewModelRegistry;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\Escaper;
-use Siteation\StoreInfoPaymentLogos\ViewModel\StorePaymentLogos;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
+use Siteation\StoreInfoPayments\ViewModel\StorePayments;
 
 /** @var ViewModelRegistry $viewModels */
 /** @var Template $block */
 /** @var Escaper $escaper */
 
-/** @var StorePaymentLogos $storePaymentLogos */
-$storePaymentLogos = $viewModels->require(StorePaymentLogos::class);
-$paymentOptions = $storePaymentLogos->getPaymentMethods();
-$paymentLogosBasePath = 'Siteation_StoreInfoPaymentLogos::images/payment-logos.svg';
+/** @var PaymentIcons $paymentIcons */
+$paymentIcons = $viewModels->require(PaymentIcons::class);
+
+/** @var StorePayments $storePayments */
+$storePayments = $viewModels->require(StorePayments::class);
+
+$paymentOptions = $storePayments->getPaymentMethods();
 
 if (!$paymentOptions) {
     return '';
 }
 ?>
 
-<ul class="payment-logos flex flex-wrap gap-4 max-w-md">
+<ul class="payment-logos flex flex-wrap gap-4">
     <?php foreach ($paymentOptions as $option): ?>
         <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="36">
-                <title><?= $escaper->escapeHtml($option) ?></title>
-                <use href="<?= $block->getViewFileUrl($paymentLogosBasePath); ?>#<?= $escaper->escapeHtml($option) ?>" />
-            </svg>
+            <?= $paymentIcons->renderHtml($option, '', 54, 36); ?>
         </li>
     <?php endforeach; ?>
 </ul>
