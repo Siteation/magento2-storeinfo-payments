@@ -26,7 +26,7 @@ bin/magento setup:upgrade
 By default, this Magento module displays all enabled payment methods as icons in your theme's footer and requires no configuration.
 
 If you want to exclude specific payment methods,
-simply go to Stores → Configuration → Sales → Sales → Payment methods.
+simply go to Stores → Configuration → Siteation → Payment methods.
 
 If you'd like to display payment methods in other areas of your site,
 you can use the convenient options offered by the viewModel from our Storeinfo Payment module.
