@@ -23,7 +23,7 @@ if (!$paymentOptions) {
 }
 ?>
 
-<ul class="payment-logos flex flex-wrap gap-4">
+<ul class="payment-logos flex flex-wrap gap-4 pr-4 lg:w-1/4 md:w-1/2">
     <?php foreach ($paymentOptions as $option): ?>
         <li>
             <?= $paymentIcons->renderHtml($option, '', 64, 48); ?>
