@@ -111,7 +111,11 @@ class StorePayments implements ArgumentInterface
      */
     private function filterPaymentMethods($method): string
     {
-        if (str_contains($method, "_afterpay")) {
+        if (
+            str_contains($method, "_afterpay") ||
+            str_contains($method, "_afterpay2") ||
+            str_contains($method, "_afterpay20")
+        ) {
             return "riverty";
         }
 
@@ -119,15 +123,43 @@ class StorePayments implements ArgumentInterface
             return "_kbc";
         }
 
-        if (str_contains($method, "cadeau")) {
+        if (
+            str_contains($method, "cadeau") ||
+            str_contains($method, "_giftcards")
+        ) {
             return "giftcard";
+        }
+
+        if (str_contains($method, "_idealprocessing")) {
+            return "ideal";
+        }
+
+        if (str_contains($method, "_mrcash")) {
+            return "bancontact";
+        }
+
+        if (
+            str_contains($method, "_direct-debit") ||
+            str_contains($method, "_directdebit") ||
+            str_contains($method, "_sepadirectdebit")
+        ) {
+            return "sepa";
+        }
+
+        if (str_contains($method, "_sofortbanking")) {
+            return "sofort";
+        }
+
+        if (str_contains($method, "buckaroo_magento2_transfer")) {
+            return "banktransfer";
         }
 
         if (
             str_contains($method, "_visa") ||
             str_contains($method, "_maestro") ||
             str_contains($method, "_amex") ||
-            str_contains($method, "_mastercard")
+            str_contains($method, "_mastercard") ||
+            str_contains($method, "_creditcards")
         ) {
             return "creditcard";
         }

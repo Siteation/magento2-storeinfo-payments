@@ -35,39 +35,54 @@ This feature also provides additional functions for more flexibility in showing 
 
 ## Supported Payment options
 
-|                  |   [Mollie]   |   [PayNL]    | [MultiSafePay] |
-| ---------------- | :----------: | :----------: | :------------: |
-| afterpay/riverty |              |      x       |       x        |
-| alipay           |              |      x       |       x        |
-| amazonpay        |              |      x       |       x        |
-| american express | = creditcard | = creditcard |  = creditcard  |
-| applepay         |      x       |      x       |       x        |
-| bancontact       |      x       |      x       |       x        |
-| banktransfer     |      x       |              |       x        |
-| belfius          |      x       |              |       x        |
-| biller           |              |      x       |       x        |
-| creditcard       |      x       |              |       x        |
-| direct-debit     |              |              |       x        |
-| eps              |      x       |      x       |       x        |
-| giftcard         |      x       |      x       |                |
-| giropay          |      x       |      x       |       x        |
-| googlepay        |              |      x       |       x        |
-| ideal            |      x       |      x       |                |
-| in3              |      x       |      x       |       x        |
-| kbc/cbc          |      x       |              |       x        |
-| klarna           |      x       |      x       |                |
-| maestro          | = creditcard | = creditcard |  = creditcard  |
-| mastercard       | = creditcard | = creditcard |  = creditcard  |
-| mybank           |      x       |              |       x        |
-| paypal           |      x       |      x       |       x        |
-| paysafecard      |      x       |              |       x        |
-| przelewy24       |      x       |      x       |                |
-| visa             | = creditcard | = creditcard |  = creditcard  |
-| sepa             |      x       |              |                |
-| sofort           |      x       |      x       |                |
+> [!NOTE]
+> While we haven't specifically tested Siteation Magento 2 StoreInfo Payments with every payment module,
+> it should still work with many of them.
+>
+> This list only reflects the modules we've confirmed compatibility with so far.
 
-> **Info**: Any payment option with `cadeau` in its name will also show the giftcard method
+|                    | [Mollie] | [PayNL] | [MultiSafePay] | [Buckaroo] |
+| ------------------ | :------: | :-----: | :------------: | :--------: |
+| afterpay/riverty   |          |    x    |       x        |     x      |
+| alipay             |          |    x    |       x        |     x      |
+| amazonpay          |          |    x    |       x        |            |
+| american express   |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
+| applepay           |    x     |    x    |       x        |     x      |
+| bancontact         |    x     |    x    |       x        |     x      |
+| banktransfer       |    x     |         |       x        |     x      |
+| belfius            |    x     |         |       x        |     x      |
+| biller             |          |    x    |       x        |            |
+| creditcard         |    x     |         |       x        |     x      |
+| direct-debit       |          |         |       x        |            |
+| eps                |    x     |    x    |       x        |     x      |
+| giftcard           |    x     |    x    |                |     x      |
+| giropay            |    x     |    x    |       x        |     x      |
+| googlepay          |          |    x    |       x        |            |
+| ideal              |    x     |    x    |                |     x      |
+| in3                |    x     |    x    |       x        |     x      |
+| kbc/cbc            |    x     |         |       x        |     x      |
+| klarna             |    x     |    x    |                |            |
+| maestro            |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
+| mastercard         |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
+| mbway / multibanco |          |    x    |       x        |     x      |
+| mybank             |    x     |         |       x        |            |
+| payconiq           |          |    x    |                |     x      |
+| paypal             |    x     |    x    |       x        |     x      |
+| paysafecard        |    x     |         |       x        |            |
+| przelewy24         |    x     |    x    |                |     x      |
+| sepa               |    x     |         |                |     x      |
+| sofort             |    x     |    x    |                |     x      |
+| trustly            |    x     |    x    |       x        |            |
+| visa               |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
+| wechatpay          |          |    x    |       x        |     x      |
+
+> _#1_ Available as option but always shown as one creditcard icon, by default
+
+> _#2_ Only available trough the creditcard options, not directly
+
+> **Info**: Any payment option with `cadeau` in its name will also show the gift |card method
 
 [Mollie]: https://github.com/mollie/magento2
 [PayNL]: https://github.com/paynl/magento2-plugin
 [MultiSafePay]: https://github.com/MultiSafepay/magento2
+[Buckaroo]: https://github.com/buckaroo-it/Magento2
