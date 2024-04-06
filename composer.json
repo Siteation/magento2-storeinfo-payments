@@ -22,13 +22,11 @@
   "require": {
     "magento/framework": ">=102.0.0",
     "magento/module-payment": "^100.0",
-    "hyva-themes/magento2-theme-module": "^1.1|^1.2",
+    "hyva-themes/magento2-theme-module": ">=1.1.0",
     "siteation/magento2-hyva-icons-payment": ">=1.0.2"
   },
   "autoload": {
-    "files": [
-      "registration.php"
-    ],
+    "files": ["registration.php"],
     "psr-4": {
       "Siteation\\StoreInfoPayments\\": ""
     }
