@@ -16,7 +16,6 @@
                         "Belfius": "belfius",
                         "Biller": "biller",
                         "Creditcard": "creditcard",
-                        "Direct Debit": "direct-debit",
                         "Eps": "eps",
                         "Giftcard": "giftcard",
                         "Giropay": "giropay",
@@ -34,7 +33,7 @@
                         "Sofort": "sofort"
                     }
                 </payment_filter_options>
-                <payment_options_show>alipay,amazonpay,applepay,bancontact,banktransfer,belfius,biller,creditcard,direct-debit,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,mybank,paypal,paysafecard,przelewy24,riverty,sepa,sofort</payment_options_show>
+                <payment_options_show>alipay,amazonpay,applepay,bancontact,banktransfer,belfius,biller,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,mybank,paypal,paysafecard,przelewy24,riverty,sepa,sofort</payment_options_show>
             </payment>
         </siteation_storeinfo_payment>
     </default>
