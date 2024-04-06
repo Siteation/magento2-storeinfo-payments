@@ -33,7 +33,7 @@ you can use the convenient options offered by the viewModel from our Storeinfo P
 
 This feature also provides additional functions for more flexibility in showing your configured payment methods to be displayed on your store.
 
-## Supported Payment options
+## Supported Payment options as Icon
 
 > [!NOTE]
 > While we haven't specifically tested Siteation Magento 2 StoreInfo Payments with every payment module,
@@ -43,38 +43,38 @@ This feature also provides additional functions for more flexibility in showing 
 
 |                    | [Mollie] | [PayNL] | [MultiSafePay] | [Buckaroo] |
 | ------------------ | :------: | :-----: | :------------: | :--------: |
-| afterpay/riverty   |          |    x    |       x        |     x      |
-| alipay             |          |    x    |       x        |     x      |
-| amazonpay          |          |    x    |       x        |            |
+| afterpay/riverty   |          |   ✅    |       ✅       |     ✅     |
+| alipay             |          |   ✅    |       ✅       |     ✅     |
+| amazonpay          |          |   ✅    |       ✅       |            |
 | american express   |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| applepay           |    x     |    x    |       x        |     x      |
-| bancontact         |    x     |    x    |       x        |     x      |
-| banktransfer       |    x     |         |       x        |     x      |
-| belfius            |    x     |         |       x        |     x      |
-| biller             |          |    x    |       x        |            |
-| creditcard         |    x     |         |       x        |     x      |
-| direct-debit       |          |         |       x        |            |
-| eps                |    x     |    x    |       x        |     x      |
-| giftcard           |    x     |    x    |                |     x      |
-| giropay            |    x     |    x    |       x        |     x      |
-| googlepay          |          |    x    |       x        |            |
-| ideal              |    x     |    x    |                |     x      |
-| in3                |    x     |    x    |       x        |     x      |
-| kbc/cbc            |    x     |         |       x        |     x      |
-| klarna             |    x     |    x    |                |            |
+| applepay           |    ✅    |   ✅    |       ✅       |     ✅     |
+| bancontact         |    ✅    |   ✅    |       ✅       |     ✅     |
+| banktransfer       |    ✅    |         |       ✅       |     ✅     |
+| belfius            |    ✅    |         |       ✅       |     ✅     |
+| biller             |          |   ✅    |       ✅       |            |
+| creditcard         |    ✅    |         |       ✅       |     ✅     |
+| direct-debit       |          |         |       ✅       |            |
+| eps                |    ✅    |   ✅    |       ✅       |     ✅     |
+| giftcard           |    ✅    |   ✅    |                |     ✅     |
+| giropay            |    ✅    |   ✅    |       ✅       |     ✅     |
+| googlepay          |          |   ✅    |       ✅       |            |
+| ideal              |    ✅    |   ✅    |                |     ✅     |
+| in3                |    ✅    |   ✅    |       ✅       |     ✅     |
+| kbc/cbc            |    ✅    |         |       ✅       |     ✅     |
+| klarna             |    ✅    |   ✅    |                |            |
 | maestro            |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
 | mastercard         |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| mbway / multibanco |          |    x    |       x        |     x      |
-| mybank             |    x     |         |       x        |            |
-| payconiq           |          |    x    |                |     x      |
-| paypal             |    x     |    x    |       x        |     x      |
-| paysafecard        |    x     |         |       x        |            |
-| przelewy24         |    x     |    x    |                |     x      |
-| sepa               |    x     |         |                |     x      |
-| sofort             |    x     |    x    |                |     x      |
-| trustly            |    x     |    x    |       x        |            |
+| mbway / multibanco |          |   ✅    |       ✅       |     ✅     |
+| mybank             |    ✅    |         |       ✅       |            |
+| payconiq           |          |   ✅    |                |     ✅     |
+| paypal             |    ✅    |   ✅    |       ✅       |     ✅     |
+| paysafecard        |    ✅    |         |       ✅       |            |
+| przelewy24         |    ✅    |   ✅    |                |     ✅     |
+| sepa               |    ✅    |         |                |     ✅     |
+| sofort             |    ✅    |   ✅    |                |     ✅     |
+| trustly            |    ✅    |   ✅    |       ✅       |            |
 | visa               |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| wechatpay          |          |    x    |       x        |     x      |
+| wechatpay          |          |   ✅    |       ✅       |     ✅     |
 
 > _#1_ Available as option but always shown as one creditcard icon, by default
 
