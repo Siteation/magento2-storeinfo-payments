@@ -80,7 +80,7 @@ This feature also provides additional functions for more flexibility in showing 
 
 > _#2_ Only available trough the creditcard options, not directly
 
-> **Info**: Any payment option with `cadeau` in its name will also show the gift |card method
+> **Info**: Any payment option with `cadeau` in its name will also show as the giftcard
 
 [Mollie]: https://github.com/mollie/magento2
 [PayNL]: https://github.com/paynl/magento2-plugin
