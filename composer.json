@@ -1,6 +1,6 @@
 {
   "name": "siteation/magento2-storeinfo-payments",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "type": "magento2-module",
   "description": "The Siteation StoreInfo Payments module simplifies the process of displaying your configured payment methods on your store",
