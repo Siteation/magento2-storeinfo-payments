@@ -41,57 +41,55 @@ You can disable this feature trough the admin option found in Stores → Configu
 
 ## Supported Payment options as Icon
 
-> [!NOTE]
-> While we haven't specifically tested Siteation Magento 2 StoreInfo Payments with every payment module,
-> it should still work with many of them.
->
-> This list only reflects the modules we've confirmed compatibility with so far.
+> \*Bundled to one creditcard icon by default, can be disabled trough the [CreditCard method unbundling option](#creditcard-method-unbundling)
 
 |                    | [Mollie] | [PayNL] | [MultiSafePay] | [Buckaroo] |
 | ------------------ | :------: | :-----: | :------------: | :--------: |
-| afterpay/riverty   |          |    ✔    |       ✔        |     ✔      |
-| alipay             |          |    ✔    |       ✔        |     ✔      |
-| amazonpay          |          |    ✔    |       ✔        |            |
-| american express   |   ✔ *    |   ✔ *   |      ✔ *       |            |
-| applepay           |    ✔     |    ✔    |       ✔        |     ✔      |
-| bancontact         |    ✔     |    ✔    |       ✔        |     ✔      |
-| banktransfer       |    ✔     |         |       ✔        |     ✔      |
-| belfius            |    ✔     |         |       ✔        |     ✔      |
-| biller             |          |    ✔    |       ✔        |            |
-| billie             |    ✔     |         |                |            |
-| creditcard         |    ✔     |         |       ✔        |     ✔      |
-| direct-debit       |          |         |       ✔        |            |
-| eps                |    ✔     |    ✔    |       ✔        |     ✔      |
-| giftcard           |    ✔     |    ✔    |                |     ✔      |
-| giropay            |    ✔     |    ✔    |       ✔        |     ✔      |
-| googlepay          |          |    ✔    |       ✔        |            |
-| ideal              |    ✔     |    ✔    |                |     ✔      |
-| in3                |    ✔     |    ✔    |       ✔        |     ✔      |
-| kbc/cbc            |    ✔     |         |       ✔        |     ✔      |
-| klarna             |    ✔     |    ✔    |                |            |
-| maestro            |   ✔ *    |   ✔ *   |      ✔ *       |            |
-| mastercard         |   ✔ *    |   ✔ *   |      ✔ *       |            |
-| mbway / multibanco |          |    ✔    |       ✔        |     ✔      |
-| mybank             |    ✔     |         |       ✔        |            |
-| payconiq           |          |    ✔    |                |     ✔      |
-| paypal             |    ✔     |    ✔    |       ✔        |     ✔      |
-| paysafecard        |    ✔     |         |       ✔        |            |
-| przelewy24         |    ✔     |    ✔    |                |     ✔      |
-| sepa               |    ✔     |         |                |     ✔      |
-| sofort             |    ✔     |    ✔    |                |     ✔      |
-| stripe             |          |         |                |            |
-| trustly            |    ✔     |    ✔    |       ✔        |            |
-| visa               |   ✔ *    |   ✔ *   |      ✔ *       |            |
-| vpay               |          |    ✔    |       ✔        |            |
-| wechatpay          |          |    ✔    |       ✔        |     ✔      |
+| afterpay/riverty   |          |    ✅    |       ✅        |     ✅      |
+| alipay             |          |    ✅    |       ✅        |     ✅      |
+| amazonpay          |          |    ✅    |       ✅        |            |
+| american express * |    ✅     |    ✅    |       ✅        |            |
+| applepay           |    ✅     |    ✅    |       ✅        |     ✅      |
+| bancontact         |    ✅     |    ✅    |       ✅        |     ✅      |
+| banktransfer       |    ✅     |         |       ✅        |     ✅      |
+| belfius            |    ✅     |         |       ✅        |     ✅      |
+| biller             |          |    ✅    |       ✅        |            |
+| billie             |    ✅     |         |                |            |
+| creditcard         |    ✅     |         |       ✅        |     ✅      |
+| direct-debit       |          |         |       ✅        |            |
+| eps                |    ✅     |    ✅    |       ✅        |     ✅      |
+| giftcard           |    ✅     |    ✅    |                |     ✅      |
+| giropay            |    ✅     |    ✅    |       ✅        |     ✅      |
+| googlepay          |          |    ✅    |       ✅        |            |
+| ideal              |    ✅     |    ✅    |                |     ✅      |
+| in3                |    ✅     |    ✅    |       ✅        |     ✅      |
+| kbc/cbc            |    ✅     |         |       ✅        |     ✅      |
+| klarna             |    ✅     |    ✅    |                |            |
+| maestro *          |    ✅     |    ✅    |       ✅        |            |
+| mastercard *       |    ✅     |    ✅    |       ✅        |            |
+| mbway / multibanco |          |    ✅    |       ✅        |     ✅      |
+| mybank             |    ✅     |         |       ✅        |            |
+| payconiq           |          |    ✅    |                |     ✅      |
+| paypal             |    ✅     |    ✅    |       ✅        |     ✅      |
+| paysafecard        |    ✅     |         |       ✅        |            |
+| przelewy24         |    ✅     |    ✅    |                |     ✅      |
+| sepa               |    ✅     |         |                |     ✅      |
+| sofort             |    ✅     |    ✅    |                |     ✅      |
+| trustly            |    ✅     |    ✅    |       ✅        |            |
+| visa *             |    ✅     |    ✅    |       ✅        |            |
+| vpay               |          |    ✅    |       ✅        |            |
+| wechatpay          |          |    ✅    |       ✅        |     ✅      |
 
-> \*Bundled to one creditcard icon by default, can be disabled trough the options
-
-> [!NOTE]
-> Any payment option with `cadeau` in its name will also be shown as the giftcard
-
-> [!NOTE]
+> [!NOTE] Stripe Support
 > [Stripe] is also supported trough the [Adobe Marketplace](https://commercemarketplace.adobe.com/stripe-stripe-payments.html)
+
+> [!NOTE] Giftcard aliases
+> Any payment option with `gift` or `cadeau` in its name will also be shown as the `giftcard`
+
+> [!IMPORTANT] This list only reflects the modules we've confirmed compatibility with so far
+> While we haven't specifically tested this module with every payment module,
+> it should work with many of them out of the box,
+> as long the payment methods listed are offered by this payment module.
 
 [Mollie]: https://github.com/mollie/magento2
 [PayNL]: https://github.com/paynl/magento2-plugin
