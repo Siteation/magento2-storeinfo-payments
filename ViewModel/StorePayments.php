@@ -18,10 +18,6 @@ class StorePayments implements ArgumentInterface
     protected ScopeConfigInterface $scopeConfig;
     protected Config $paymentModelConfig;
 
-    /**
-     * @param ScopeConfigInterface $scopeConfig
-     * @param Config $paymentModelConfig
-     */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
         Config $paymentModelConfig
@@ -30,12 +26,6 @@ class StorePayments implements ArgumentInterface
         $this->paymentModelConfig = $paymentModelConfig;
     }
 
-    /**
-     * Get all enabled payment options,
-     * and return them as array with the title and code
-     *
-     * @return array[]
-     */
     public function getActivePaymentMethods(): array
     {
         $payments = $this->paymentModelConfig->getActiveMethods();
@@ -53,11 +43,6 @@ class StorePayments implements ArgumentInterface
         return $methods;
     }
 
-    /**
-     * Get the filtered payment options
-     *
-     * @return string[]
-     */
     public function selectedPaymentMethods(): array
     {
         $data = $this->scopeConfig->getValue(
@@ -69,11 +54,6 @@ class StorePayments implements ArgumentInterface
         return $options;
     }
 
-    /**
-     * Get only the names from all active payment options
-     *
-     * @return string[]
-     */
     public function getActivePaymentNames(): array
     {
         $payments = $this->getActivePaymentMethods();
@@ -86,11 +66,6 @@ class StorePayments implements ArgumentInterface
         return $methods;
     }
 
-    /**
-     * Get only the codes from all active payment options
-     *
-     * @return string[]
-     */
     public function getActivePaymentCodes()
     {
         $payments = $this->getActivePaymentMethods();
@@ -103,12 +78,6 @@ class StorePayments implements ArgumentInterface
         return $methods;
     }
 
-    /**
-     * Filtered any payment methods that have changed in name or are a duplicate of another name
-     *
-     * @param string $method
-     * @return string
-     */
     private function filterPaymentMethods($method): string
     {
         if (
@@ -171,9 +140,6 @@ class StorePayments implements ArgumentInterface
      * Create an filtered array with only the payment options that are also in the filter options,
      * and return the filter names with no duplicates,
      * so it is easier to use them for the loop in the frontend logic
-     *
-     * @param bool $sort
-     * @return string[]
      */
     public function getPaymentMethods($sort = true): array
     {
@@ -184,8 +150,6 @@ class StorePayments implements ArgumentInterface
         foreach ($codes as $code) {
             $payment = $this->filterPaymentMethods($code);
 
-            // Iterate through the available payment methods,
-            // and apply a filter to obtain the active ones
             foreach ($filters as $filter) {
                 if (str_contains($payment, $filter)) {
                     $methods[] = $filter;
@@ -197,7 +161,6 @@ class StorePayments implements ArgumentInterface
             sort($methods);
         }
 
-        // Return the array without any duplicates
         return array_unique($methods);
     }
 }
