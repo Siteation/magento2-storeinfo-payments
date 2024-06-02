@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Option to show each Creditcard icon sepparate, instead of the bundled creditcard icon
 ## [1.0.2] - 2024-04-06
 ### Changed
-- Update dependacies
+- Update dependencies
 
 ## [1.0.1] - 2023-08-18
 ### Fixed

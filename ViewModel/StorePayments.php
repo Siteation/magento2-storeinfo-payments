@@ -54,6 +54,14 @@ class StorePayments implements ArgumentInterface
         return $options;
     }
 
+    public function showCreditCardMethodsBundled(): bool
+    {
+        return (bool) $this->scopeConfig->getValue(
+            'siteation_storeinfo_payment/payment/payment_options_bundle_credit_methods',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
     public function getActivePaymentNames(): array
     {
         $payments = $this->getActivePaymentMethods();
@@ -78,7 +86,7 @@ class StorePayments implements ArgumentInterface
         return $methods;
     }
 
-    private function filterPaymentMethods($method): string
+    private function filterPaymentMethods($method, $bundle_creditcards = true): string
     {
         if (
             str_contains($method, "_afterpay") ||
@@ -123,12 +131,25 @@ class StorePayments implements ArgumentInterface
             return "banktransfer";
         }
 
+        if (str_contains($method, "_creditcards")) {
+            return "creditcard";
+        }
+
         if (
-            str_contains($method, "_visa") ||
-            str_contains($method, "_maestro") ||
-            str_contains($method, "_amex") ||
-            str_contains($method, "_mastercard") ||
-            str_contains($method, "_creditcards")
+            $bundle_creditcards && (
+                str_contains($method, "_americanexpress") ||
+                str_contains($method, "_american_express")
+            )
+        ) {
+            return "amex";
+        }
+
+        if (
+            $bundle_creditcards && (
+                str_contains($method, "_visa") ||
+                str_contains($method, "_maestro") ||
+                str_contains($method, "_mastercard")
+            )
         ) {
             return "creditcard";
         }
@@ -143,12 +164,13 @@ class StorePayments implements ArgumentInterface
      */
     public function getPaymentMethods($sort = true): array
     {
+        $bundle_creditcards = $this->showCreditCardMethodsBundled();
         $filters = $this->selectedPaymentMethods();
         $codes = $this->getActivePaymentCodes();
         $methods = array();
 
         foreach ($codes as $code) {
-            $payment = $this->filterPaymentMethods($code);
+            $payment = $this->filterPaymentMethods($code, $bundle_creditcards);
 
             foreach ($filters as $filter) {
                 if (str_contains($payment, $filter)) {
