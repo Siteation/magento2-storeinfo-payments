@@ -115,6 +115,10 @@ class StorePayments implements ArgumentInterface
             return "bancontact";
         }
 
+        if (str_contains($method, "_mbway")) {
+            return "multibanco";
+        }
+
         if (
             str_contains($method, "_direct-debit") ||
             str_contains($method, "_directdebit") ||

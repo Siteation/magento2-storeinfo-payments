@@ -10,11 +10,13 @@
                     {
                         "AliPay": "alipay",
                         "Amazon Pay": "amazonpay",
+                        "American Express": "amex",
                         "Apple Pay": "applepay",
                         "Bancontact": "bancontact",
                         "Bank Transfer": "banktransfer",
                         "Belfius": "belfius",
                         "Biller": "biller",
+                        "Billie": "billie",
                         "Creditcard": "creditcard",
                         "Eps": "eps",
                         "Giftcard": "giftcard",
@@ -24,16 +26,24 @@
                         "IN3": "in3",
                         "KBC": "kbc",
                         "Klarna": "klarna",
+                        "Maestro": "maestro",
+                        "Mastercard": "mastercard",
+                        "MB Way/Multibanco": "multibanco",
                         "MyBank": "mybank",
+                        "Payconiq": "payconiq",
                         "PayPal": "paypal",
                         "PaySafe Card": "paysafecard",
                         "Przelewy 24": "przelewy24",
                         "Riverty": "riverty",
                         "Sepa": "sepa",
-                        "Sofort": "sofort"
+                        "Sofort": "sofort",
+                        "Stripe": "stripe",
+                        "Trustly": "trustly",
+                        "Visa": "visa",
+                        "WeChatPay": "wechatpay"
                     }
                 </payment_filter_options>
-                <payment_options_show>alipay,amazonpay,applepay,bancontact,banktransfer,belfius,biller,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,mybank,paypal,paysafecard,przelewy24,riverty,sepa,sofort</payment_options_show>
+                <payment_options_show>alipay,amazonpay,amex,applepay,bancontact,banktransfer,belfius,biller,billie,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,maestro,mastercard,multibanco,mybank,payconiq,paypal,paysafecard,przelewy24,riverty,sepa,sofort,stripe,trustly,visa,wechatpay</payment_options_show>
                 <payment_options_bundle_credit_methods>1</payment_options_bundle_credit_methods>
             </payment>
         </siteation_storeinfo_payment>

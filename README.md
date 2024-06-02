@@ -49,46 +49,52 @@ You can disable this feature trough the admin option found in Stores → Configu
 
 |                    | [Mollie] | [PayNL] | [MultiSafePay] | [Buckaroo] |
 | ------------------ | :------: | :-----: | :------------: | :--------: |
-| afterpay/riverty   |          |   ✅    |       ✅       |     ✅     |
-| alipay             |          |   ✅    |       ✅       |     ✅     |
-| amazonpay          |          |   ✅    |       ✅       |            |
-| american express   |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| applepay           |    ✅    |   ✅    |       ✅       |     ✅     |
-| bancontact         |    ✅    |   ✅    |       ✅       |     ✅     |
-| banktransfer       |    ✅    |         |       ✅       |     ✅     |
-| belfius            |    ✅    |         |       ✅       |     ✅     |
-| biller             |          |   ✅    |       ✅       |            |
-| creditcard         |    ✅    |         |       ✅       |     ✅     |
-| direct-debit       |          |         |       ✅       |            |
-| eps                |    ✅    |   ✅    |       ✅       |     ✅     |
-| giftcard           |    ✅    |   ✅    |                |     ✅     |
-| giropay            |    ✅    |   ✅    |       ✅       |     ✅     |
-| googlepay          |          |   ✅    |       ✅       |            |
-| ideal              |    ✅    |   ✅    |                |     ✅     |
-| in3                |    ✅    |   ✅    |       ✅       |     ✅     |
-| kbc/cbc            |    ✅    |         |       ✅       |     ✅     |
-| klarna             |    ✅    |   ✅    |                |            |
-| maestro            |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| mastercard         |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| mbway / multibanco |          |   ✅    |       ✅       |     ✅     |
-| mybank             |    ✅    |         |       ✅       |            |
-| payconiq           |          |   ✅    |                |     ✅     |
-| paypal             |    ✅    |   ✅    |       ✅       |     ✅     |
-| paysafecard        |    ✅    |         |       ✅       |            |
-| przelewy24         |    ✅    |   ✅    |                |     ✅     |
-| sepa               |    ✅    |         |                |     ✅     |
-| sofort             |    ✅    |   ✅    |                |     ✅     |
-| trustly            |    ✅    |   ✅    |       ✅       |            |
-| visa               |   _#1_   |  _#1_   |      _#1_      |    _#2_    |
-| wechatpay          |          |   ✅    |       ✅       |     ✅     |
+| afterpay/riverty   |          |    ✔    |       ✔        |     ✔      |
+| alipay             |          |    ✔    |       ✔        |     ✔      |
+| amazonpay          |          |    ✔    |       ✔        |            |
+| american express   |   ✔ *    |   ✔ *   |      ✔ *       |            |
+| applepay           |    ✔     |    ✔    |       ✔        |     ✔      |
+| bancontact         |    ✔     |    ✔    |       ✔        |     ✔      |
+| banktransfer       |    ✔     |         |       ✔        |     ✔      |
+| belfius            |    ✔     |         |       ✔        |     ✔      |
+| biller             |          |    ✔    |       ✔        |            |
+| billie             |    ✔     |         |                |            |
+| creditcard         |    ✔     |         |       ✔        |     ✔      |
+| direct-debit       |          |         |       ✔        |            |
+| eps                |    ✔     |    ✔    |       ✔        |     ✔      |
+| giftcard           |    ✔     |    ✔    |                |     ✔      |
+| giropay            |    ✔     |    ✔    |       ✔        |     ✔      |
+| googlepay          |          |    ✔    |       ✔        |            |
+| ideal              |    ✔     |    ✔    |                |     ✔      |
+| in3                |    ✔     |    ✔    |       ✔        |     ✔      |
+| kbc/cbc            |    ✔     |         |       ✔        |     ✔      |
+| klarna             |    ✔     |    ✔    |                |            |
+| maestro            |   ✔ *    |   ✔ *   |      ✔ *       |            |
+| mastercard         |   ✔ *    |   ✔ *   |      ✔ *       |            |
+| mbway / multibanco |          |    ✔    |       ✔        |     ✔      |
+| mybank             |    ✔     |         |       ✔        |            |
+| payconiq           |          |    ✔    |                |     ✔      |
+| paypal             |    ✔     |    ✔    |       ✔        |     ✔      |
+| paysafecard        |    ✔     |         |       ✔        |            |
+| przelewy24         |    ✔     |    ✔    |                |     ✔      |
+| sepa               |    ✔     |         |                |     ✔      |
+| sofort             |    ✔     |    ✔    |                |     ✔      |
+| stripe             |          |         |                |            |
+| trustly            |    ✔     |    ✔    |       ✔        |            |
+| visa               |   ✔ *    |   ✔ *   |      ✔ *       |            |
+| vpay               |          |    ✔    |       ✔        |            |
+| wechatpay          |          |    ✔    |       ✔        |     ✔      |
 
-> _#1_ Available as option but always shown as one creditcard icon, by default
+> \*Bundled to one creditcard icon by default, can be disabled trough the options
 
-> _#2_ Only available trough the creditcard options, not directly
+> [!NOTE]
+> Any payment option with `cadeau` in its name will also be shown as the giftcard
 
-> **Info**: Any payment option with `cadeau` in its name will also show as the giftcard
+> [!NOTE]
+> [Stripe] is also supported trough the [Adobe Marketplace](https://commercemarketplace.adobe.com/stripe-stripe-payments.html)
 
 [Mollie]: https://github.com/mollie/magento2
 [PayNL]: https://github.com/paynl/magento2-plugin
 [MultiSafePay]: https://github.com/MultiSafepay/magento2
 [Buckaroo]: https://github.com/buckaroo-it/Magento2
+[Stripe]: https://commercemarketplace.adobe.com/stripe-stripe-payments.html

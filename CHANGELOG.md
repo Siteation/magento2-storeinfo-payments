@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Option to show each Creditcard icon sepparate, instead of the bundled creditcard icon
+- Support for more payment options, see readme for what is supported
+- Buckaroo to the support chart
+
 ## [1.0.2] - 2024-04-06
 ### Changed
 - Update dependencies
