@@ -34,6 +34,7 @@
                     }
                 </payment_filter_options>
                 <payment_options_show>alipay,amazonpay,applepay,bancontact,banktransfer,belfius,biller,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,mybank,paypal,paysafecard,przelewy24,riverty,sepa,sofort</payment_options_show>
+                <payment_options_bundle_credit_methods>1</payment_options_bundle_credit_methods>
             </payment>
         </siteation_storeinfo_payment>
     </default>

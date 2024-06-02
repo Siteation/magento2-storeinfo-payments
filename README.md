@@ -33,6 +33,12 @@ you can use the convenient options offered by the viewModel from our Storeinfo P
 
 This feature also provides additional functions for more flexibility in showing your configured payment methods to be displayed on your store.
 
+### CreditCard method unbundling
+
+By default Siteation StoreInfo Payments module will bundle all CreditCard methods.
+
+You can disable this feature trough the admin option found in Stores → Configuration → Siteation → Payment methods.
+
 ## Supported Payment options as Icon
 
 > [!NOTE]

@@ -43,6 +43,19 @@
                     <label>Payment Methods to show</label>
                     <source_model>Siteation\StoreInfoPayments\Model\Config\PaymentOptions</source_model>
                 </field>
+                <field
+                    id="payment_options_bundle_credit_methods"
+                    translate="label"
+                    type="select"
+                    sortOrder="1"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1"
+                    canRestore="1"
+                >
+                    <label>Bundle Creditcard Methods</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
         </section>
     </system>
