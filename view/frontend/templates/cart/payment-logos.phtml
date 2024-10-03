@@ -23,7 +23,7 @@ if (!$paymentOptions) {
 }
 ?>
 
-<ul class="payment-logos px-4 py-6 bg-gray-100 flex flex-wrap justify-center gap-4">
+<ul role="list" class="payment-logos px-4 py-6 bg-gray-100 flex flex-wrap justify-center gap-4">
     <?php foreach ($paymentOptions as $option): ?>
         <li>
             <?= $paymentIcons->renderHtml($option, '', 48, 32); ?>
