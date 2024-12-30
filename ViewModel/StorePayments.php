@@ -107,6 +107,10 @@ class StorePayments implements ArgumentInterface
             return "giftcard";
         }
 
+        if (str_contains($method, "payone_paydirekt")) {
+            return "giropay";
+        }
+
         if (str_contains($method, "_idealprocessing")) {
             return "ideal";
         }
@@ -122,7 +126,8 @@ class StorePayments implements ArgumentInterface
         if (
             str_contains($method, "_direct-debit") ||
             str_contains($method, "_directdebit") ||
-            str_contains($method, "_sepadirectdebit")
+            str_contains($method, "_sepadirectdebit") ||
+            str_contains($method, "payone_debit")
         ) {
             return "sepa";
         }
@@ -137,6 +142,13 @@ class StorePayments implements ArgumentInterface
 
         if (str_contains($method, "_creditcards")) {
             return "creditcard";
+        }
+
+        if (
+            str_contains($method, "_cash_on_delivery") ||
+            str_contains($method, "_payafter")
+        ) {
+            return "cash-on-delivery";
         }
 
         if (

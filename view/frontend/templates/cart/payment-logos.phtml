@@ -10,7 +10,12 @@ use Siteation\StoreInfoPayments\ViewModel\StorePayments;
 /** @var Template $block */
 /** @var Escaper $escaper */
 
-/** @var PaymentIcons $paymentIcons */
+/**
+ * To use a diffent style, update the viewmodal,
+ * to for example `Siteation\HyvaIconsPayment\ViewModel\PaymentIcons`
+ *
+ * @var PaymentIcons $paymentIcons
+ */
 $paymentIcons = $viewModels->require(PaymentIcons::class);
 
 /** @var StorePayments $storePayments */
@@ -23,10 +28,14 @@ if (!$paymentOptions) {
 }
 ?>
 
-<ul role="list" class="payment-logos px-4 py-6 bg-gray-100 flex flex-wrap justify-center gap-4">
+<ul
+    role="list"
+    class="payment-logos px-4 py-6 bg-gray-100 flex flex-wrap justify-center gap-4"
+    aria-label="<?= $escaper->escapeHtmlAttr(__('Payment Methods')) ?>"
+>
     <?php foreach ($paymentOptions as $option): ?>
         <li>
-            <?= $paymentIcons->renderHtml($option, '', 48, 32); ?>
+            <?= $paymentIcons->renderHtml($option, '', 48, 32, ["title" => __('Logo %1', $option)]); ?>
         </li>
     <?php endforeach; ?>
 </ul>

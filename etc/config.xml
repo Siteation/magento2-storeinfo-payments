@@ -13,10 +13,10 @@
                         "American Express": "amex",
                         "Apple Pay": "applepay",
                         "Bancontact": "bancontact",
-                        "Bank Transfer": "banktransfer",
                         "Belfius": "belfius",
                         "Biller": "biller",
                         "Billie": "billie",
+                        "Cash on Delivery": "cash-on-delivery",
                         "Creditcard": "creditcard",
                         "Eps": "eps",
                         "Giftcard": "giftcard",
@@ -43,7 +43,7 @@
                         "WeChatPay": "wechatpay"
                     }
                 </payment_filter_options>
-                <payment_options_show>alipay,amazonpay,amex,applepay,bancontact,banktransfer,belfius,biller,billie,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,maestro,mastercard,multibanco,mybank,payconiq,paypal,paysafecard,przelewy24,riverty,sepa,sofort,stripe,trustly,visa,wechatpay</payment_options_show>
+                <payment_options_show>alipay,amazonpay,amex,applepay,bancontact,belfius,biller,billie,cash-on-delivery,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,maestro,mastercard,multibanco,mybank,payconiq,paypal,paysafecard,przelewy24,riverty,sepa,sofort,stripe,trustly,visa,wechatpay</payment_options_show>
                 <payment_options_bundle_credit_methods>1</payment_options_bundle_credit_methods>
             </payment>
         </siteation_storeinfo_payment>
