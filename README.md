@@ -43,39 +43,39 @@ You can disable this feature trough the admin option found in Stores → Configu
 
 |                    | [Mollie] | [PayNL] | [MultiSafePay] | [Buckaroo] | [PayOne] |
 | ------------------ | :------: | :-----: | :------------: | :--------: | :------: |
-| afterpay/riverty   |          |    x    |       x        |     x      |          |
-| alipay             |          |    x    |       x        |     x      |    x     |
-| amazonpay          |          |    x    |       x        |            |    x     |
-| american express * |    x     |    x    |       x        |            |          |
-| applepay           |    x     |    x    |       x        |     x      |    x     |
-| bancontact         |    x     |    x    |       x        |     x      |    x     |
-| belfius            |    x     |         |       x        |     x      |          |
-| biller             |          |    x    |       x        |            |          |
-| billie             |    x     |         |                |            |          |
-| creditcard         |    x     |         |       x        |     x      |    x     |
-| direct-debit       |          |         |       x        |            |    x     |
-| eps                |    x     |    x    |       x        |     x      |    x     |
-| giftcard           |    x     |    x    |                |     x      |          |
-| giropay            |    x     |    x    |       x        |     x      |    x     |
-| googlepay          |          |    x    |       x        |            |          |
-| ideal              |    x     |    x    |                |     x      |    x     |
-| in3                |    x     |    x    |       x        |     x      |          |
-| kbc/cbc            |    x     |         |       x        |     x      |          |
-| klarna             |    x     |    x    |                |            |    x     |
-| maestro *          |    x     |    x    |       x        |            |          |
-| mastercard *       |    x     |    x    |       x        |            |          |
-| mbway / multibanco |          |    x    |       x        |     x      |          |
-| mybank             |    x     |         |       x        |            |          |
-| payconiq           |          |    x    |                |     x      |          |
-| paypal             |    x     |    x    |       x        |     x      |    x     |
-| paysafecard        |    x     |         |       x        |            |          |
-| przelewy24         |    x     |    x    |                |     x      |    x     |
-| sepa               |    x     |         |                |     x      |    x     |
-| sofort             |    x     |    x    |                |     x      |    x     |
-| trustly            |    x     |    x    |       x        |            |    x     |
-| visa *             |    x     |    x    |       x        |            |          |
-| vpay               |          |    x    |       x        |            |          |
-| wechatpay          |          |    x    |       x        |     x      |    x     |
+| afterpay/riverty   |          |    ✓    |       ✓        |     ✓      |          |
+| alipay             |          |    ✓    |       ✓        |     ✓      |    ✓     |
+| amazonpay          |          |    ✓    |       ✓        |            |    ✓     |
+| american express * |    ✓     |    ✓    |       ✓        |            |          |
+| applepay           |    ✓     |    ✓    |       ✓        |     ✓      |    ✓     |
+| bancontact         |    ✓     |    ✓    |       ✓        |     ✓      |    ✓     |
+| belfius            |    ✓     |         |       ✓        |     ✓      |          |
+| biller             |          |    ✓    |       ✓        |            |          |
+| billie             |    ✓     |         |                |            |          |
+| creditcard         |    ✓     |         |       ✓        |     ✓      |    ✓     |
+| direct-debit       |          |         |       ✓        |            |    ✓     |
+| eps                |    ✓     |    ✓    |       ✓        |     ✓      |    ✓     |
+| giftcard           |    ✓     |    ✓    |                |     ✓      |          |
+| giropay            |    ✓     |    ✓    |       ✓        |     ✓      |    ✓     |
+| googlepay          |          |    ✓    |       ✓        |            |          |
+| ideal              |    ✓     |    ✓    |                |     ✓      |    ✓     |
+| in3                |    ✓     |    ✓    |       ✓        |     ✓      |          |
+| kbc/cbc            |    ✓     |         |       ✓        |     ✓      |          |
+| klarna             |    ✓     |    ✓    |                |            |    ✓     |
+| maestro *          |    ✓     |    ✓    |       ✓        |            |          |
+| mastercard *       |    ✓     |    ✓    |       ✓        |            |          |
+| mbway / multibanco |          |    ✓    |       ✓        |     ✓      |          |
+| mybank             |    ✓     |         |       ✓        |            |          |
+| payconiq           |          |    ✓    |                |     ✓      |          |
+| paypal             |    ✓     |    ✓    |       ✓        |     ✓      |    ✓     |
+| paysafecard        |    ✓     |         |       ✓        |            |          |
+| przelewy24         |    ✓     |    ✓    |                |     ✓      |    ✓     |
+| sepa               |    ✓     |         |                |     ✓      |    ✓     |
+| sofort             |    ✓     |    ✓    |                |     ✓      |    ✓     |
+| trustly            |    ✓     |    ✓    |       ✓        |            |    ✓     |
+| visa *             |    ✓     |    ✓    |       ✓        |            |          |
+| vpay               |          |    ✓    |       ✓        |            |          |
+| wechatpay          |          |    ✓    |       ✓        |     ✓      |    ✓     |
 
 > \*Bundled to one creditcard icon by default, can be disabled trough the [CreditCard method unbundling option](#creditcard-method-unbundling)
 
