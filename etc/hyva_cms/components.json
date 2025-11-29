@@ -1,0 +1,22 @@
+{
+  "storeinfo_payment_icons": {
+    "label": "Storeinfo Payment Icons",
+    "template": "Siteation_StoreInfoPayments::elements/icons.phtml",
+    "content": {
+      "variants": {
+        "type": "variant",
+        "label": "Style Variant",
+        "options": [
+          {
+            "label": "Default",
+            "value": "Siteation_StoreInfoPayments::elements/icons.phtml"
+          },
+          {
+            "label": "List",
+            "value": "Siteation_StoreInfoPayments::elements/list.phtml"
+          }
+        ]
+      }
+    }
+  }
+}
