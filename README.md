@@ -6,44 +6,38 @@
 [![Hyvä CMS Supported](https://img.shields.io/badge/Hyva_CMS-Supported-0a144b.svg?longCache=true&style=for-the-badge)](https://hyva.io/)
 [![License](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/license.png)](https://github.com/Siteation/magento2-storeinfo-payments/blob/main/LICENSE)
 
-The Siteation StoreInfo Payments module simplifies the process of displaying your configured payment methods on your store.
+The Siteation StoreInfo Payments module simplifies displaying configured payment methods on your store.
 
-All you need to do is enable your payment methods as you would for the checkout payment options.
-
-This module will then display the same options as payment methods in your footer or anywhere else you choose.
+Once enabled for checkout, this module automatically displays the same options in your footer or other chosen locations.
 
 ## Installation
 
-Install the package via;
+Install the package via:
 
 ```bash
-composer require siteation/magento2-storeinfo-menus
+composer require siteation/magento2-storeinfo-payments
 bin/magento setup:upgrade
 ```
 
 ## How to use
 
-By default, this Magento module displays all enabled payment methods as icons in your theme's footer and requires no configuration.
+By default, the module displays all enabled payment methods as icons in your theme's footer without requiring configuration.
 
-If you want to exclude specific payment methods,
-simply go to Stores → Configuration → Siteation → Payment Methods.
+To exclude specific payment methods, navigate to **Stores → Configuration → Siteation → Payment Methods**.
 
-If you'd like to display payment methods in other areas of your site,
-you can use the convenient options offered by the viewModel from our Storeinfo Payment module.
-
-This feature also provides additional functions for more flexibility in showing your configured payment methods to be displayed on your store.
+To display payment methods in other areas, use the ViewModel provided by this module. It offers additional functions for greater flexibility in rendering configured payment methods.
 
 ### Icon Style
 
-By default Siteation StoreInfo Payments displays the icon style as default (card with icon).
+The default icon style is "default" (card with icon).
 
-You can configure the style trough the admin option found in Stores → Configuration → Siteation → Payment Methods → Payment Method Style.
+You can configure the style through the admin option found in **Stores → Configuration → Siteation → Payment Methods → Payment Method Style**.
 
-### CreditCard method unbundling
+### Credit Card Method Unbundling
 
-By default Siteation StoreInfo Payments module will bundle all CreditCard methods.
+By default, the module bundles all Credit Card methods into a single icon.
 
-You can disable this feature trough the admin option found in Stores → Configuration → Siteation → Payment Methods → Bundle Creditcard Methods.
+You can disable this feature through the admin option found in **Stores → Configuration → Siteation → Payment Methods → Bundle Creditcard Methods**.
 
 ## Previews
 
@@ -102,7 +96,7 @@ You can disable this feature trough the admin option found in Stores → Configu
 | vpay                         |          |    ✓    |       ✓        |            |          |
 | wechatpay                    |          |    ✓    |       ✓        |     ✓      |    ✓     |
 
-> \*Bundled to one creditcard icon by default, can be disabled trough the [CreditCard method unbundling option](#creditcard-method-unbundling)
+> \*Bundled to one creditcard icon by default, can be disabled trough the [CreditCard method unbundling option](#credit-card-method-unbundling)
 
 > [!NOTE]
 > [Stripe] is also supported trough the [Adobe Marketplace](https://commercemarketplace.adobe.com/stripe-stripe-payments.html)
