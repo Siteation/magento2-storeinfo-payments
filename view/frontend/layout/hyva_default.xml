@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceBlock name="footer">
+            <block
+                name="siteation.payment.logos.footer"
+                as="payment-logos"
+                template="Siteation_StoreInfoPayments::html/marquee.phtml"
+                before="footer-content"
+                ifconfig="siteation_storeinfo_payment/payment_locations/show_before_footer"
+            >
+                <arguments>
+                    <argument name="css_classes" xsi:type="string">storeinfo my-12 border-b border-gray-300 container</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="footer-content">
+            <block
+                name="siteation.payment.logos.footer.content"
+                template="Siteation_StoreInfoPayments::html/row.phtml"
+                ifconfig="siteation_storeinfo_payment/payment_locations/show_in_footer"
+            />
+        </referenceBlock>
+
+        <referenceContainer name="cart-drawer.bottom">
+            <block
+                name="siteation.payment.logos.cart-drawer"
+                template="Siteation_StoreInfoPayments::html/row.phtml"
+                ifconfig="siteation_storeinfo_payment/payment_locations/show_in_minicart"
+            >
+                <arguments>
+                    <argument name="css_classes" xsi:type="string">storeinfo flex flex-wrap justify-center gap-4 my-4 px-4 py-6 bg-gray-100</argument>
+                    <argument name="icon_width" xsi:type="string">42</argument>
+                    <argument name="icon_height" xsi:type="string">28</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

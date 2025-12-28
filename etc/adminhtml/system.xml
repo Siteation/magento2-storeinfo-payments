@@ -31,10 +31,23 @@
             >
                 <label>Payment Methods</label>
                 <field
+                    id="icon_style"
+                    translate="label"
+                    type="select"
+                    sortOrder="10"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1"
+                    canRestore="1"
+                >
+                    <label>Payment Method Style</label>
+                    <source_model>Siteation\StoreInfoPayments\Model\Config\IconStyle</source_model>
+                </field>
+                <field
                     id="payment_options_show"
                     translate="label"
                     type="multiselect"
-                    sortOrder="1"
+                    sortOrder="20"
                     showInDefault="1"
                     showInWebsite="1"
                     showInStore="1"
@@ -47,7 +60,7 @@
                     id="payment_options_bundle_credit_methods"
                     translate="label"
                     type="select"
-                    sortOrder="1"
+                    sortOrder="30"
                     showInDefault="1"
                     showInWebsite="1"
                     showInStore="1"
