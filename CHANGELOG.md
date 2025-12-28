@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.0.0...main
 
-## [2.0.0] - 2024-12-29
+## [2.0.0] - 2025-12-28
 
 [2.0.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/1.2.0...2.0.0
 
