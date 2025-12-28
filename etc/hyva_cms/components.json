@@ -1,22 +1,109 @@
 {
   "storeinfo_payment_icons": {
-    "label": "Storeinfo Payment Icons",
-    "template": "Siteation_StoreInfoPayments::elements/icons.phtml",
+    "label": "Payment Icons",
+    "category": "StoreInfo",
+    "icon": "Siteation_StoreInfoPayments::images/components/badge-euro.svg",
+    "template": "Siteation_StoreInfoPayments::elements/row.phtml",
     "content": {
       "variants": {
         "type": "variant",
-        "label": "Style Variant",
+        "label": "Variant",
         "options": [
           {
-            "label": "Default",
-            "value": "Siteation_StoreInfoPayments::elements/icons.phtml"
+            "label": "Row",
+            "value": "Siteation_StoreInfoPayments::elements/row.phtml"
           },
           {
             "label": "List",
             "value": "Siteation_StoreInfoPayments::elements/list.phtml"
+          },
+          {
+            "label": "Marquee",
+            "value": "Siteation_StoreInfoPayments::elements/marquee.phtml"
+          }
+        ]
+      },
+      "icon_style": {
+        "type": "select",
+        "label": "Icon Style",
+        "options": [
+          {
+            "label": "Default",
+            "value": "default"
+          },
+          {
+            "label": "Mono",
+            "value": "mono"
+          },
+          {
+            "label": "Flat",
+            "value": "flat"
           }
         ]
       }
+    },
+    "design": {
+      "icon_width": {
+        "type": "number",
+        "label": "Icon Width",
+        "default_value": 64,
+        "attributes": {
+          "max": "500"
+        },
+        "config": {
+          "value_suffix": "px"
+        }
+      },
+      "icon_height": {
+        "type": "number",
+        "label": "Icon Height",
+        "default_value": 48,
+        "attributes": {
+          "max": "500"
+        },
+        "config": {
+          "value_suffix": "px"
+        }
+      },
+      "gap": {
+        "type": "range",
+        "label": "Gap size",
+        "default_value": 2,
+        "attributes": {
+          "max": "10"
+        },
+        "config": {
+          "value_suffix": "rem"
+        },
+        "show_if": {
+          "variants": ["Siteation_StoreInfoPayments::elements/marquee.phtml"]
+        }
+      },
+      "reverse": {
+        "label": "Reverse Direction",
+        "type": "boolean",
+        "default_value": false,
+        "show_if": {
+          "variants": ["Siteation_StoreInfoPayments::elements/marquee.phtml"]
+        }
+      },
+      "duration": {
+        "type": "number",
+        "label": "Duration (seconds)",
+        "default_value": 40,
+        "attributes": {
+          "min": "10",
+          "max": "120",
+          "step": "10",
+          "comment": "Time it takes to spin around to the start. The Amount and Size of the items also impacts the duration."
+        },
+        "show_if": {
+          "variants": ["Siteation_StoreInfoPayments::elements/marquee.phtml"]
+        }
+      }
+    },
+    "advanced": {
+      "includes": "Hyva_CmsBase::etc/hyva_cms/default_advanced.json"
     }
   }
 }

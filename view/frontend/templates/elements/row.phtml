@@ -35,13 +35,13 @@ $iconHeight = (int) $block->getIconHeight() ?: 48;
 
 $styles = array_filter([
     'list-style: none',
-    'padding-left: 0'
+    'padding-left: 0',
 ]);
 $styleAttr = !empty($styles) ? ' style="' . implode('; ', $styles) . ';"' : '';
 
 $classes = implode(' ', array_filter([
     $block->getClasses() ?: 'storeinfo',
-    'self-start divide-y divide-inherit border-slate-200'
+    'self-start flex flex-wrap gap-4'
 ]));
 ?>
 
@@ -54,13 +54,12 @@ $classes = implode(' ', array_filter([
         <?= /** @noEscape */ $block->getEditorAttrs() ?>
     >
         <?php foreach ($paymentOptions as $option): ?>
-            <li class="flex items-center gap-4 py-2">
+            <li>
                 <?= match ($iconStyle) {
                     'mono' => $paymentIconsMono->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
                     'flat' => $paymentIconsFlat->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
                     'default' => $paymentIcons->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)])
                 } ?>
-                <span class="text-xl capitalize"><?= $escaper->escapeHtmlAttr($option); ?></span>
             </li>
         <?php endforeach; ?>
     </ul>

@@ -1,0 +1,120 @@
+<?php declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsMono;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsFlat;
+use Siteation\StoreInfoPayments\ViewModel\StorePayments;
+
+/** @var ViewModelRegistry $viewModels */
+/** @var Template $block */
+/** @var Escaper $escaper */
+
+/** @var PaymentIcons $paymentIcons */
+$paymentIcons = $viewModels->require(PaymentIcons::class);
+
+/** @var PaymentIconsMono $paymentIconsMono */
+$paymentIconsMono = $viewModels->require(PaymentIconsMono::class);
+
+/** @var PaymentIconsFlat $paymentIconsFlat */
+$paymentIconsFlat = $viewModels->require(PaymentIconsFlat::class);
+
+/** @var StorePayments $storePayments */
+$storePayments = $viewModels->require(StorePayments::class);
+
+$paymentOptions = $storePayments->getPaymentMethods();
+
+$uid = $block->getUid();
+$blockId = $block->getBlockId() ?? "siteation-marquee-{$uid}";
+
+$gap = $block->getData('gap') ?: 2;
+$duration = $block->getData('duration') ?: 40;
+$reverse = $block->getData('reverse') !== null ? $block->getData('reverse') : false;
+
+$iconStyle = $block->getIconStyle() ?: 'default';
+$iconWidth = (int) $block->getIconWidth() ?: 64;
+$iconHeight = (int) $block->getIconHeight() ?: 48;
+
+$cssClasses = implode(' ', array_filter([
+    $block->getClasses() ?: 'storeinfo',
+    'my-12 border-b border-gray-300'
+]));
+?>
+
+<aside
+    data-liveview-element="siteation-payment-logos-marquee"
+    id="<?= $escaper->escapeHtmlAttr($blockId) ?>"
+    class="<?= $escaper->escapeHtmlAttr($cssClasses) ?>"
+    <?= /** @noEscape */ $block->getEditorAttrs() ?>
+    aria-label="<?= $escaper->escapeHtmlAttr(__('Payment Methods')) ?>"
+>
+    <p class="text-xl leading-tight flex items-center gap-4 text-center">
+        <span class="border-b border-gray-300 grow min-w-8"></span>
+        <strong><?= $escaper->escapeHtml(__('Payment Methods')) ?></strong>
+        <span class="border-b border-gray-300 grow min-w-8"></span>
+    </p>
+
+    <?php if ($paymentOptions): ?>
+        <div class="marquee-section flex select-none overflow-hidden mask-x-from-90% py-8">
+            <ul
+                role="list"
+                class="!list-none !pl-0 marquee-row shrink-0 flex items-center justify-around min-w-full"
+            >
+                <?php foreach ($paymentOptions as $option): ?>
+                    <li>
+                        <?= match ($iconStyle) {
+                            'mono' => $paymentIconsMono->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                            'flat' => $paymentIconsFlat->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                            'default' => $paymentIcons->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)])
+                        } ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <div
+                aria-hidden="true"
+                class="marquee-row shrink-0 flex items-center justify-around min-w-full"
+            >
+                <?php foreach ($paymentOptions as $option): ?>
+                    <?= match ($iconStyle) {
+                        'mono' => $paymentIconsMono->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                        'flat' => $paymentIconsFlat->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                        'default' => $paymentIcons->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)])
+                    } ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php else: ?>
+        <?= /** @noEscape */ $block->renderEditorMessage(['preview_message' => __('No Payment options Configured')]) ?>
+    <?php endif ?>
+
+    <style>
+        :where(#<?= $escaper->escapeHtml($blockId) ?>) {
+            --gap: <?= $escaper->escapeHtml($gap) ?>rem;
+            --duration: <?= $escaper->escapeHtml($duration) ?>s;
+            --playing: running;
+
+            &:hover {
+                --playing: paused;
+            }
+        }
+
+        :where(#<?= $escaper->escapeHtml($blockId) ?> :is(.marquee-section, .marquee-row)) {
+            gap: var(--gap);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            :where(#<?= $escaper->escapeHtml($blockId) ?> .marquee-row)  {
+                animation: var(--duration) linear infinite animation-<?= $escaper->escapeHtml($blockId) ?> var(--playing);
+                <?php if ($reverse): ?>animation-direction: reverse;<?php endif; ?>
+            }
+        }
+
+        @keyframes animation-<?= $escaper->escapeHtml($blockId) ?> {
+            to {
+                transform: translateZ(0) translateX(calc(-100% - var(--gap)));
+            }
+        }
+    </style>
+</aside>
