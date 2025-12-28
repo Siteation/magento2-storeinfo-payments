@@ -70,6 +70,38 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
+
+            <group
+                id="payment_locations"
+                translate="label"
+                type="text"
+                sortOrder="1"
+                showInDefault="1"
+                showInWebsite="1"
+                showInStore="1"
+            >
+                <label>Payment Locations</label>
+                <field id="show_before_footer" translate="label" type="select" sortOrder="10" showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1" canRestore="1">
+                    <label>Show Before Footer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_in_footer" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1" canRestore="1">
+                    <label>Show In Footer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_in_minicart" translate="label" type="select" sortOrder="30" showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1" canRestore="1">
+                    <label>Show In Minicart</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>
