@@ -6,7 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/1.2.0...main
+[Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.0.0...main
+
+## [2.0.0] - 2024-12-29
+
+[2.0.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/1.2.0...2.0.0
+
+### Added
+
+- Added Hyvä CMS support, allowing the templates to be used as components.
+- Added Icon Style option for Default, Mono and Flat styles.
+- Added support for Location display conditions.
+- Added Footer Payment Icons to before footer as a default in marquee style.
+
+### Changed
+
+- Reworked templates to be more modular and easier to customize.
 
 ## [1.2.0] - 2024-12-29
 
