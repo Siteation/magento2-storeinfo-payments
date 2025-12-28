@@ -31,10 +31,23 @@
             >
                 <label>Payment Methods</label>
                 <field
+                    id="icon_style"
+                    translate="label"
+                    type="select"
+                    sortOrder="10"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1"
+                    canRestore="1"
+                >
+                    <label>Payment Method Style</label>
+                    <source_model>Siteation\StoreInfoPayments\Model\Config\IconStyle</source_model>
+                </field>
+                <field
                     id="payment_options_show"
                     translate="label"
                     type="multiselect"
-                    sortOrder="1"
+                    sortOrder="20"
                     showInDefault="1"
                     showInWebsite="1"
                     showInStore="1"
@@ -47,13 +60,45 @@
                     id="payment_options_bundle_credit_methods"
                     translate="label"
                     type="select"
-                    sortOrder="1"
+                    sortOrder="30"
                     showInDefault="1"
                     showInWebsite="1"
                     showInStore="1"
                     canRestore="1"
                 >
                     <label>Bundle Creditcard Methods</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group
+                id="payment_locations"
+                translate="label"
+                type="text"
+                sortOrder="1"
+                showInDefault="1"
+                showInWebsite="1"
+                showInStore="1"
+            >
+                <label>Payment Locations</label>
+                <field id="show_before_footer" translate="label" type="select" sortOrder="10" showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1" canRestore="1">
+                    <label>Show Before Footer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_in_footer" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1" canRestore="1">
+                    <label>Show In Footer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_in_minicart" translate="label" type="select" sortOrder="30" showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1" canRestore="1">
+                    <label>Show In Minicart</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>

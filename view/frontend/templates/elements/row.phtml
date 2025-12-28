@@ -1,0 +1,68 @@
+<?php declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsMono;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsFlat;
+use Siteation\StoreInfoPayments\ViewModel\StorePayments;
+
+/** @var ViewModelRegistry $viewModels */
+/** @var Template $block */
+/** @var Escaper $escaper */
+
+/** @var PaymentIcons $paymentIcons */
+$paymentIcons = $viewModels->require(PaymentIcons::class);
+
+/** @var PaymentIconsMono $paymentIconsMono */
+$paymentIconsMono = $viewModels->require(PaymentIconsMono::class);
+
+/** @var PaymentIconsFlat $paymentIconsFlat */
+$paymentIconsFlat = $viewModels->require(PaymentIconsFlat::class);
+
+/** @var StorePayments $storePayments */
+$storePayments = $viewModels->require(StorePayments::class);
+
+$paymentOptions = $storePayments->getPaymentMethods();
+
+$uid = $block->getUid();
+$blockId = $block->getBlockId() ?? "siteation-row-{$uid}";
+
+$iconStyle = $block->getIconStyle() ?: 'default';
+$iconWidth = (int) $block->getIconWidth() ?: 64;
+$iconHeight = (int) $block->getIconHeight() ?: 48;
+
+$styles = array_filter([
+    'list-style: none',
+    'padding-left: 0',
+]);
+$styleAttr = !empty($styles) ? ' style="' . implode('; ', $styles) . ';"' : '';
+
+$classes = implode(' ', array_filter([
+    $block->getClasses() ?: 'storeinfo',
+    'self-start flex flex-wrap gap-4'
+]));
+?>
+
+<?php if ($paymentOptions): ?>
+    <ul
+        id="<?= $escaper->escapeHtmlAttr($blockId) ?>"
+        class="<?= $escaper->escapeHtmlAttr($classes) ?>"
+        data-liveview-element="siteation-payment-logos-row"
+        <?= /** @noEscape */ $styleAttr ?>
+        <?= /** @noEscape */ $block->getEditorAttrs() ?>
+    >
+        <?php foreach ($paymentOptions as $option): ?>
+            <li>
+                <?= match ($iconStyle) {
+                    'mono' => $paymentIconsMono->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                    'flat' => $paymentIconsFlat->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                    'default' => $paymentIcons->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)])
+                } ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <?= /** @noEscape */ $block->renderEditorMessage(['preview_message' => __('No Payment options Configured')]) ?>
+<?php endif ?>

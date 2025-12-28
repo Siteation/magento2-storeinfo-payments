@@ -26,6 +26,16 @@ class StorePayments implements ArgumentInterface
         $this->paymentModelConfig = $paymentModelConfig;
     }
 
+    public function getStoreInfo(string $attribute): mixed
+    {
+        $path = sprintf('siteation_storeinfo_payment/payment/%s', $attribute);
+        return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
+    }
+
+    public function getIconStyle() {
+        return $this->getStoreInfo('icon_style');
+    }
+
     public function getActivePaymentMethods(): array
     {
         $payments = $this->paymentModelConfig->getActiveMethods();

@@ -1,0 +1,53 @@
+<?php declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsMono;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsFlat;
+use Siteation\StoreInfoPayments\ViewModel\StorePayments;
+
+/** @var ViewModelRegistry $viewModels */
+/** @var Template $block */
+/** @var Escaper $escaper */
+
+/** @var PaymentIcons $paymentIcons */
+$paymentIcons = $viewModels->require(PaymentIcons::class);
+
+/** @var PaymentIconsMono $paymentIconsMono */
+$paymentIconsMono = $viewModels->require(PaymentIconsMono::class);
+
+/** @var PaymentIconsFlat $paymentIconsFlat */
+$paymentIconsFlat = $viewModels->require(PaymentIconsFlat::class);
+
+/** @var StorePayments $storePayments */
+$storePayments = $viewModels->require(StorePayments::class);
+
+$paymentOptions = $storePayments->getPaymentMethods();
+
+$iconStyle = $block->getIconStyle() ?: $storePayments->getIconStyle() ?: 'default';
+$iconWidth = (int) $block->getIconWidth() ?: 64;
+$iconHeight = (int) $block->getIconHeight() ?: 48;
+
+$cssClasses = $block->getCssClasses() ?: 'storeinfo flex flex-wrap gap-4';
+
+if (!$paymentOptions) {
+    return '';
+}
+?>
+
+<ul
+    role="list"
+    class="<?= $escaper->escapeHtmlAttr($cssClasses) ?>"
+>
+    <?php foreach ($paymentOptions as $option): ?>
+        <li>
+            <?= match ($iconStyle) {
+                'mono' => $paymentIconsMono->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                'flat' => $paymentIconsFlat->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)]),
+                'default' => $paymentIcons->renderHtml($option, '', $iconWidth, $iconHeight, ["title" => __('Logo %1', $option)])
+            } ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
