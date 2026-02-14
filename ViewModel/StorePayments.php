@@ -170,12 +170,10 @@ class StorePayments implements ArgumentInterface
         }
 
         if (
-            $bundle_creditcards && (
-                str_contains($method, "_americanexpress") ||
-                str_contains($method, "_american_express")
-            )
+            str_contains($method, "_americanexpress") ||
+            str_contains($method, "_american_express")
         ) {
-            return "amex";
+            return $bundle_creditcards ? "creditcard" : "amex";
         }
 
         if (
