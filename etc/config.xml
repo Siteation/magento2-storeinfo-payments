@@ -45,6 +45,7 @@
                 </payment_filter_options>
                 <payment_options_show>alipay,amazonpay,amex,applepay,bancontact,belfius,biller,billie,cash-on-delivery,creditcard,eps,giftcard,giropay,googlepay,ideal,in3,kbc,klarna,maestro,mastercard,multibanco,mybank,payconiq,paypal,paysafecard,przelewy24,riverty,sepa,sofort,stripe,trustly,visa,wechatpay</payment_options_show>
                 <payment_options_bundle_credit_methods>1</payment_options_bundle_credit_methods>
+                <payment_options_display_ideal_wero>1</payment_options_display_ideal_wero>
             </payment>
             <payment_locations>
                 <show_before_footer>1</show_before_footer>

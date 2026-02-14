@@ -72,6 +72,14 @@ class StorePayments implements ArgumentInterface
         );
     }
 
+    public function displayIdealWero(): bool
+    {
+        return (bool) $this->scopeConfig->getValue(
+            'siteation_storeinfo_payment/payment/payment_options_display_ideal_wero',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
     public function getActivePaymentNames(): array
     {
         $payments = $this->getActivePaymentMethods();
@@ -96,7 +104,7 @@ class StorePayments implements ArgumentInterface
         return $methods;
     }
 
-    private function filterPaymentMethods($method, $bundle_creditcards = true): string
+    private function filterPaymentMethods($method, $bundle_creditcards = true, $display_ideal_wero = true): string
     {
         if (
             str_contains($method, "_afterpay") ||
@@ -119,6 +127,10 @@ class StorePayments implements ArgumentInterface
 
         if (str_contains($method, "payone_paydirekt")) {
             return "giropay";
+        }
+
+        if ($display_ideal_wero && str_contains($method, "_ideal")) {
+            return "ideal-wero";
         }
 
         if (str_contains($method, "_idealprocessing")) {
@@ -191,12 +203,13 @@ class StorePayments implements ArgumentInterface
     public function getPaymentMethods($sort = true): array
     {
         $bundle_creditcards = $this->showCreditCardMethodsBundled();
+        $display_ideal_wero = $this->displayIdealWero();
         $filters = $this->selectedPaymentMethods();
         $codes = $this->getActivePaymentCodes();
         $methods = array();
 
         foreach ($codes as $code) {
-            $payment = $this->filterPaymentMethods($code, $bundle_creditcards);
+            $payment = $this->filterPaymentMethods($code, $bundle_creditcards, $display_ideal_wero);
 
             foreach ($filters as $filter) {
                 if (str_contains($payment, $filter)) {
