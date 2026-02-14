@@ -129,10 +129,6 @@ class StorePayments implements ArgumentInterface
             return "giropay";
         }
 
-        if ($display_ideal_wero && str_contains($method, "_ideal")) {
-            return "ideal-wero";
-        }
-
         if (str_contains($method, "_idealprocessing")) {
             return "ideal";
         }
@@ -204,16 +200,21 @@ class StorePayments implements ArgumentInterface
     {
         $bundle_creditcards = $this->showCreditCardMethodsBundled();
         $display_ideal_wero = $this->displayIdealWero();
+
         $filters = $this->selectedPaymentMethods();
         $codes = $this->getActivePaymentCodes();
         $methods = array();
 
         foreach ($codes as $code) {
-            $payment = $this->filterPaymentMethods($code, $bundle_creditcards, $display_ideal_wero);
+            $payment = $this->filterPaymentMethods($code, $bundle_creditcards);
 
             foreach ($filters as $filter) {
                 if (str_contains($payment, $filter)) {
-                    $methods[] = $filter;
+                    if ($display_ideal_wero && str_contains($payment, 'ideal')) {
+                        $methods[] = 'ideal-wero';
+                    } else {
+                        $methods[] = $filter;
+                    }
                 }
             }
         }
