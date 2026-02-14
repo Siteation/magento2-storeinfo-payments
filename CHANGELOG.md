@@ -6,7 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.0.0...main
+[Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.1.0...main
+
+## [2.1.0] - 2026-02-14
+
+[2.1.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.0.0...2.1.0
+
+### Added
+
+- Support for changing the iDeal logo to the new iDeal - Wero Logo
+- Tailwind 4 support for Hyvä.
+
+### Fixed
+
+- Creditcard Bundeling option with AmericanExpress
 
 ## [2.0.0] - 2025-12-28
 
