@@ -1,0 +1,89 @@
+<?php declare(strict_types=1);
+
+/**
+ * @author Siteation (https://siteation.dev/)
+ * @copyright Copyright 2023 Siteation (https://siteation.dev/)
+ * @license MIT
+ *
+ * Nebula Content "payment-icons" component. Renders the active, filtered payment methods
+ * as inline SVG logos in one of three layouts (row / list / marquee). The marquee reuses
+ * the NFT theme's CSP-safe nebula-marquee CSS — no inline <style>.
+ *
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Qoliber\NebulaComponent\Model\ViewModelRegistry $viewModels
+ */
+
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsFlat;
+use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsMono;
+use Siteation\StoreInfoPayments\ViewModel\StorePayments;
+
+$data    = ($block->getData('node') ?? [])['data'] ?? [];
+$methods = $viewModels->require(StorePayments::class)->getPaymentMethods();
+
+$heading = (string) ($data['heading'] ?? '');
+$layout  = in_array($data['layout'] ?? 'row', ['row', 'list', 'marquee'], true) ? $data['layout'] : 'row';
+$style   = in_array($data['icon_style'] ?? 'default', ['default', 'mono', 'flat'], true) ? $data['icon_style'] : 'default';
+
+[$iconW, $iconH] = match ($data['size'] ?? 'medium') {
+    'small' => [40, 28],
+    'large' => [88, 64],
+    default => [64, 48],
+};
+
+// The Siteation Hyva payment-icon sets (default / mono / flat) extend Hyva's SvgIcons and
+// emit inline SVG (CSP-safe). Resolve the chosen set once from the existing ViewModels.
+$icons = match ($style) {
+    'mono' => $viewModels->require(PaymentIconsMono::class),
+    'flat' => $viewModels->require(PaymentIconsFlat::class),
+    default => $viewModels->require(PaymentIcons::class),
+};
+
+$classes = array_filter(['nebula-payment-icons', 'nebula-payment-icons--' . $layout, $data['css_classes'] ?? '']);
+
+if (!$methods) {
+    return;
+}
+
+/** Renders the inline SVG logos (optionally with a capitalized label, for the list layout). */
+$renderIcons = static function (array $methods, $icons, int $w, int $h, bool $withLabel, $escaper): string {
+    $html = '';
+    foreach ($methods as $option) {
+        $icon = $icons->renderHtml((string) $option, '', $w, $h, ['title' => (string) __('Logo %1', $option)]);
+        if ($withLabel) {
+            $html .= '<li class="flex items-center gap-4">' . $icon
+                . '<span class="capitalize">' . $escaper->escapeHtml($option) . '</span></li>';
+        } else {
+            $html .= '<li>' . $icon . '</li>';
+        }
+    }
+    return $html;
+};
+?>
+<div class="<?= $escaper->escapeHtmlAttr(implode(' ', $classes)) ?>">
+    <?php if ($heading !== '') : ?>
+        <h3 class="nebula-payment-icons-heading mb-3 text-sm font-semibold uppercase tracking-wide text-gray-700"><?= $escaper->escapeHtml($heading) ?></h3>
+    <?php endif; ?>
+
+    <?php if ($layout === 'marquee') : ?>
+        <?php
+        $trackClasses = array_filter(['nebula-marquee-track', $data['speed'] ?? '', !empty($data['reverse']) ? 'is-reverse' : '']);
+        $iconsHtml = $renderIcons($methods, $icons, $iconW, $iconH, false, $escaper);
+        ?>
+        <div class="nebula-marquee overflow-hidden">
+            <ul class="<?= $escaper->escapeHtmlAttr(implode(' ', $trackClasses)) ?> nebula-payment-icons-items list-none pl-0">
+                <?= /** @noEscape */ $iconsHtml ?>
+                <span aria-hidden="true" class="contents"><?= /** @noEscape */ $iconsHtml ?></span>
+            </ul>
+        </div>
+    <?php elseif ($layout === 'list') : ?>
+        <ul class="nebula-payment-icons-items flex flex-col gap-2 list-none pl-0">
+            <?= /** @noEscape */ $renderIcons($methods, $icons, $iconW, $iconH, true, $escaper) ?>
+        </ul>
+    <?php else : ?>
+        <ul class="nebula-payment-icons-items flex flex-wrap items-center gap-4 list-none pl-0">
+            <?= /** @noEscape */ $renderIcons($methods, $icons, $iconW, $iconH, false, $escaper) ?>
+        </ul>
+    <?php endif; ?>
+</div>

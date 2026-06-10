@@ -1,0 +1,86 @@
+{
+  "name": "payment-icons",
+  "label": "Payment Icons",
+  "icon": "fa-solid fa-credit-card",
+  "category": "storeinfo",
+  "sortOrder": 60,
+  "isContainer": false,
+  "parents": {"defaultPolicy": "allow"},
+  "children": {"defaultPolicy": "deny"},
+  "template": "Siteation_StoreInfoPayments::component/payment-icons.phtml",
+  "fields": {
+    "content": {
+      "heading": {
+        "label": "Heading",
+        "type": "text",
+        "translate": true,
+        "position": 10
+      },
+      "layout": {
+        "label": "Layout",
+        "type": "select",
+        "position": 20,
+        "default": "row",
+        "options": [
+          {"value": "row", "label": "Row"},
+          {"value": "list", "label": "List"},
+          {"value": "marquee", "label": "Marquee"}
+        ]
+      },
+      "icon_style": {
+        "label": "Icon style",
+        "type": "select",
+        "position": 30,
+        "default": "default",
+        "options": [
+          {"value": "default", "label": "Default"},
+          {"value": "mono", "label": "Mono"},
+          {"value": "flat", "label": "Flat"}
+        ]
+      }
+    },
+    "design": {
+      "size": {
+        "label": "Icon size",
+        "type": "select",
+        "position": 10,
+        "default": "medium",
+        "options": [
+          {"value": "small", "label": "Small"},
+          {"value": "medium", "label": "Medium"},
+          {"value": "large", "label": "Large"}
+        ]
+      },
+      "speed": {
+        "label": "Marquee speed",
+        "type": "select",
+        "position": 20,
+        "default": "",
+        "showIf": {"layout": ["marquee"]},
+        "options": [
+          {"value": "is-slow", "label": "Slow"},
+          {"value": "", "label": "Normal"},
+          {"value": "is-fast", "label": "Fast"}
+        ]
+      },
+      "reverse": {
+        "label": "Reverse direction",
+        "type": "toggle",
+        "position": 30,
+        "showIf": {"layout": ["marquee"]}
+      }
+    },
+    "advanced": {
+      "css_classes": {
+        "label": "CSS classes",
+        "type": "text",
+        "position": 10
+      }
+    }
+  },
+  "defaults": {
+    "layout": "row",
+    "icon_style": "default",
+    "size": "medium"
+  }
+}
