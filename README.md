@@ -8,7 +8,7 @@
 
 The Siteation StoreInfo Payments module simplifies displaying configured payment methods on your store.
 
-Once enabled for checkout, this module automatically displays the same options in your footer or other chosen locations.
+There is nothing to switch on. Whichever payment methods are active in your store show up automatically, above the footer and in the minicart by default.
 
 It runs on **any** Magento 2 theme. Luma, Breeze, Hyvä or a custom theme all get styled
 output out of the box, and a Hyvä store additionally gets the Hyvä CMS components.
@@ -24,7 +24,7 @@ bin/magento setup:upgrade
 
 ## How to use
 
-By default, the module displays all enabled payment methods as icons in your theme's footer without requiring configuration.
+Out of the box the module shows every active payment method as an icon, above the footer and in the minicart, without any configuration.
 
 To exclude specific payment methods, navigate to **Stores → Configuration → Siteation → Payment Methods**.
 
