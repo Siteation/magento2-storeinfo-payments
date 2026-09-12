@@ -8,6 +8,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.1.0...main
 
+### Added
+
+- Dependency on `siteation/magento2-storeinfo-payments-core`, the new theme neutral
+  package that now owns the store configuration and the `StorePayments` view model.
+  A store that is not on Hyvä can require core on its own, without pulling in
+  `hyva-themes/magento2-theme-module`.
+
+### Changed
+
+- This package is now the Hyvä presentation layer only: templates, layout, Hyvä CMS
+  components and the Hyvä config observer.
+- The `siteation_storeinfo_payment` configuration section, its defaults and the
+  translations moved to core. Config paths are unchanged, so existing values and
+  admin settings are untouched.
+
+### Deprecated
+
+- `Siteation\StoreInfoPayments\ViewModel\StorePayments`,
+  `Siteation\StoreInfoPayments\Model\Config\IconStyle` and
+  `Siteation\StoreInfoPayments\Model\Config\PaymentOptions`. They remain as thin
+  subclasses of their `Siteation\StoreInfoPaymentsCore\` counterparts, so existing
+  templates, blocks and `system.xml` overrides keep working. Point new code at core.
+
 ## [2.1.0] - 2026-02-14
 
 [2.1.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.0.0...2.1.0

@@ -8,6 +8,7 @@
             <module name="Magento_Payment"/>
             <module name="Magento_Store"/>
             <module name="Magento_Backend"/>
+            <module name="Siteation_StoreInfoPaymentsCore"/>
             <module name="Hyva_Theme"/>
             <module name="Siteation_HyvaIconsPayment"/>
         </sequence>

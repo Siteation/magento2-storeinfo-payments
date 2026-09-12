@@ -8,19 +8,14 @@
 
 namespace Siteation\StoreInfoPayments\Model\Config;
 
-use Magento\Framework\Data\OptionSourceInterface;
+use Siteation\StoreInfoPaymentsCore\Model\Config\IconStyle as CoreIconStyle;
 
-class IconStyle implements OptionSourceInterface
+/**
+ * @deprecated 2.2.0 Moved to siteation/magento2-storeinfo-payments-core, which has no
+ *             theme dependency. Kept so a system.xml override naming the old class
+ *             keeps working.
+ * @see CoreIconStyle
+ */
+class IconStyle extends CoreIconStyle
 {
-    /**
-     * @return array[]
-     */
-    public function toOptionArray(): array
-    {
-        return [
-            ['label' => __('Default'), 'value' => 'default'],
-            ['label' => __('Mono'), 'value' => 'mono'],
-            ['label' => __('Flat'), 'value' => 'flat']
-        ];
-    }
 }

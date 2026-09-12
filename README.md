@@ -10,6 +10,20 @@ The Siteation StoreInfo Payments module simplifies displaying configured payment
 
 Once enabled for checkout, this module automatically displays the same options in your footer or other chosen locations.
 
+This package is the **Hyvä presentation layer**: templates, layout and Hyvä CMS
+components. The payment method contract lives in a separate, theme neutral package
+that this one pulls in.
+
+| Package | Role | Requires Hyvä |
+| ------- | ---- | ------------- |
+| `siteation/magento2-storeinfo-payments` (this one) | Templates, layout, Hyvä CMS components | Yes |
+| [`siteation/magento2-storeinfo-payments-core`][core] | Store configuration plus the `StorePayments` view model | No |
+
+A store that is not on Hyvä should require **core** directly and supply its own
+markup. Config paths and the view model API are identical either way.
+
+[core]: https://github.com/Siteation/magento2-storeinfo-payments-core
+
 ## Installation
 
 Install the package via:
@@ -19,13 +33,15 @@ composer require siteation/magento2-storeinfo-payments
 bin/magento setup:upgrade
 ```
 
+Composer installs `siteation/magento2-storeinfo-payments-core` alongside it.
+
 ## How to use
 
 By default, the module displays all enabled payment methods as icons in your theme's footer without requiring configuration.
 
 To exclude specific payment methods, navigate to **Stores → Configuration → Siteation → Payment Methods**.
 
-To display payment methods in other areas, use the ViewModel provided by this module. It offers additional functions for greater flexibility in rendering configured payment methods.
+To display payment methods in other areas, use `Siteation\StoreInfoPaymentsCore\ViewModel\StorePayments`. It offers additional functions for greater flexibility in rendering configured payment methods, and it works in any theme. See the [core package README][core] for the full API.
 
 ### Icon Style
 
