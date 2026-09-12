@@ -13,16 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [2.2.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.1.0...2.2.0
 
+### Added
+
+- Support for Luma and Breeze themes, each with their own styling.
+
 ### Changed
 
-- Hyvä is no longer required. `hyva-themes/magento2-theme-module` and
-  `siteation/magento2-hyva-icons-payment` are out of `require`; the icons now come from
-  `siteation/magento2-icons-payment`, which needs nothing but `magento/framework`. A
-  Hyvä store keeps the Hyvä look and the Hyvä CMS components.
-- The templates render theme neutral markup. Luma styles it through
-  `web/css/source/_module.less`, Breeze through `web/css/breeze/_default.less` and Hyvä
-  through `view/frontend/tailwind/`, with the utility classes passed as block arguments
-  from the `hyva_default` layout handle.
+- Decoupled the Hyvä requirement, the payment icons now come from the framework
+  agnostic Siteation Payment Icons module, so the module runs on any Magento 2 theme.
+- Reworked the templates to render theme neutral markup, with the styling for each
+  frontend kept alongside it. A Hyvä store keeps its Hyvä styling and the Hyvä CMS
+  components.
 
 ## [2.1.0] - 2026-02-14
 
