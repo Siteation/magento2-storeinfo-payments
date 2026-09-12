@@ -1,4 +1,5 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -22,13 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `web/css/source/_module.less`, Breeze through `web/css/breeze/_default.less` and Hyvä
   through `view/frontend/tailwind/`, with the utility classes passed as block arguments
   from the `hyva_default` layout handle.
-
-### Fixed
-
-- **Show In Footer** and **Show In Minicart** did nothing outside Hyvä, because the
-  blocks were declared in containers only Hyvä defines. They are declared in Magento
-  core containers now and moved into the Hyvä ones when a Hyvä theme is active.
-- **Show Before Footer** rendered inside the footer instead of above it.
 
 ## [2.1.0] - 2026-02-14
 
@@ -63,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.2.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/1.1.0...1.2.0
 
 ### Added
+
 - Support for more payment options, see readme for what is supported
 - PayOne to the support chart
 
@@ -71,6 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.1.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/1.0.0...1.1.0
 
 ### Added
+
 - Option to show each Creditcard icon separate, instead of the bundled creditcard icon
 - Support for more payment options, see readme for what is supported
 - Buckaroo to the support chart
@@ -78,11 +74,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 1.0.2 - 2024-04-06
 
 ### Changed
+
 - Update dependencies
 
 ## 1.0.1 - 2023-08-18
 
 ### Fixed
+
 - Missing column style for default Hyva theme
 - SVG icon path issue
 
