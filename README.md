@@ -10,8 +10,8 @@ The Siteation StoreInfo Payments module simplifies displaying configured payment
 
 There is nothing to switch on. Whichever payment methods are active in your store show up automatically, above the footer and in the minicart by default.
 
-It runs on **any** Magento 2 theme. Luma, Breeze, Hyvä or a custom theme all get styled
-output out of the box, and a Hyvä store additionally gets the Hyvä CMS components.
+It runs on **any** Magento 2 theme. Luma, Breeze, Hyvä, Nebula or a custom theme all
+render out of the box, and a Hyvä store additionally gets the Hyvä CMS components.
 
 ## Installation
 
@@ -58,9 +58,12 @@ Styling ships per frontend, so the same markup looks right everywhere:
 | Luma and Luma based | `view/frontend/web/css/source/_module.less` |
 | Breeze | `view/frontend/web/css/breeze/_default.less` |
 | Hyvä | `view/frontend/tailwind/` |
+| Anything else | The markup carries semantic class hooks, style them from your own theme |
 
-The templates themselves carry no theme specific classes. Override the look per block
-with the `css_classes` argument in your own layout XML.
+The templates themselves carry no theme specific classes, so the hooks
+(`payment-marquee`, `payment-title`, `payment-logos`, `marquee-section`, `marquee-row`)
+are yours to style. Override the classes per block with the `css_classes` argument in
+your own layout XML.
 
 ### Credit Card Method Unbundling
 
