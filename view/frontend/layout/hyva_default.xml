@@ -1,43 +1,40 @@
 <?xml version="1.0"?>
+<!--
+    Hyvä styling for the blocks declared in default.xml. Add arguments through
+    referenceBlock: re-declaring a block that default.xml already declares would
+    replace it, arguments and all, and the templates would lose their view models.
+
+    The templates render Luma-ready markup, so everything Tailwind is set here. Note
+    that tailwind/module.css has to @source this directory for the classes to survive
+    the build.
+-->
 <page
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
 >
     <body>
-        <referenceBlock name="footer">
-            <block
-                name="siteation.payment.logos.footer"
-                as="payment-logos"
-                template="Siteation_StoreInfoPayments::html/marquee.phtml"
-                before="footer-content"
-                ifconfig="siteation_storeinfo_payment/payment_locations/show_before_footer"
-            >
-                <arguments>
-                    <argument name="css_classes" xsi:type="string">storeinfo my-12 border-b border-gray-300 container</argument>
-                </arguments>
-            </block>
+        <!-- The Hyvä containers these belong in do not exist without Hyvä, so
+             default.xml declares the blocks in core containers and they move here. -->
+        <move element="siteation.payment.logos.footer.content" destination="footer-content"/>
+        <move element="siteation.payment.logos.cart-drawer" destination="cart-drawer.bottom"/>
+
+        <referenceBlock name="siteation.payment.logos.footer">
+            <arguments>
+                <argument name="css_classes" xsi:type="string">storeinfo payment-marquee my-12 border-b border-gray-300 container</argument>
+                <argument name="heading_css_classes" xsi:type="string">payment-title text-xl</argument>
+            </arguments>
         </referenceBlock>
 
-        <referenceBlock name="footer-content">
-            <block
-                name="siteation.payment.logos.footer.content"
-                template="Siteation_StoreInfoPayments::html/row.phtml"
-                ifconfig="siteation_storeinfo_payment/payment_locations/show_in_footer"
-            />
+        <referenceBlock name="siteation.payment.logos.footer.content">
+            <arguments>
+                <argument name="css_classes" xsi:type="string">storeinfo flex flex-wrap gap-4</argument>
+            </arguments>
         </referenceBlock>
 
-        <referenceContainer name="cart-drawer.bottom">
-            <block
-                name="siteation.payment.logos.cart-drawer"
-                template="Siteation_StoreInfoPayments::html/row.phtml"
-                ifconfig="siteation_storeinfo_payment/payment_locations/show_in_minicart"
-            >
-                <arguments>
-                    <argument name="css_classes" xsi:type="string">storeinfo flex flex-wrap justify-center gap-4 my-4 px-4 py-6 bg-gray-100</argument>
-                    <argument name="icon_width" xsi:type="string">42</argument>
-                    <argument name="icon_height" xsi:type="string">28</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
+        <referenceBlock name="siteation.payment.logos.cart-drawer">
+            <arguments>
+                <argument name="css_classes" xsi:type="string">storeinfo flex flex-wrap justify-center gap-4 my-4 px-4 py-6 bg-gray-100</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>

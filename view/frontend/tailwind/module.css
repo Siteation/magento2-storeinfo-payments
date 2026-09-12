@@ -1,1 +1,4 @@
-@source "../templates/**/*.phtml";
+@source "../templates";
+@source "../layout";
+
+@import "./src/module.css";

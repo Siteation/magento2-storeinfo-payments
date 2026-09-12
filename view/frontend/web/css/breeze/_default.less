@@ -1,0 +1,91 @@
+& when (@critical) {
+    .payment-logos,
+    .payment-marquee {
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .payment-logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: @indent__s;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .payment-marquee {
+        --playing: running;
+        margin-block: @indent__xl;
+        border-bottom: 1px solid #d1d5db;
+
+        &:hover {
+            --playing: paused;
+        }
+    }
+
+    .payment-title {
+        display: flex;
+        align-items: center;
+        gap: @indent__base;
+        margin-block: 0;
+        font-size: @font-size__lg;
+        line-height: 1.2;
+        text-align: center;
+
+        &::before,
+        &::after {
+            content: "";
+            flex-grow: 1;
+            min-width: @indent__base;
+            border-bottom: 1px solid #d1d5db;
+        }
+    }
+
+    .marquee-section {
+        --marquee-gap: @indent__base;
+        display: flex;
+        gap: var(--marquee-gap);
+        user-select: none;
+        overflow: hidden;
+        --mask: linear-gradient(
+            90deg,
+            #0000,
+            #000 var(--marquee-gap),
+            #000 ~"calc(100% - var(--marquee-gap))",
+            #0000
+        );
+        -webkit-mask-image: var(--mask);
+        mask-image: var(--mask);
+        padding-block: var(--marquee-gap);
+    }
+
+    .marquee-row {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: var(--marquee-gap);
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .marquee-row {
+            animation: siteation-marquee var(--duration, 40s) linear infinite
+                var(--playing, running);
+            animation-direction: var(--direction, normal);
+        }
+    }
+
+    @keyframes siteation-marquee {
+        to {
+            transform: translateZ(0)
+                translateX(~"calc(-100% - var(--marquee-gap, 0px))");
+        }
+    }
+}

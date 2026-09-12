@@ -1,28 +1,26 @@
 <?php declare(strict_types=1);
 
-use Hyva\Theme\Model\ViewModelRegistry;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\Escaper;
-use Siteation\HyvaIconsPayment\ViewModel\PaymentIcons;
-use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsMono;
-use Siteation\HyvaIconsPayment\ViewModel\PaymentIconsFlat;
+use Siteation\IconsPayment\ViewModel\PaymentIcons;
+use Siteation\IconsPayment\ViewModel\PaymentIconsMono;
+use Siteation\IconsPayment\ViewModel\PaymentIconsFlat;
 use Siteation\StoreInfoPayments\ViewModel\StorePayments;
 
-/** @var ViewModelRegistry $viewModels */
 /** @var Template $block */
 /** @var Escaper $escaper */
 
 /** @var PaymentIcons $paymentIcons */
-$paymentIcons = $viewModels->require(PaymentIcons::class);
+$paymentIcons = $block->getPaymentIcons();
 
 /** @var PaymentIconsMono $paymentIconsMono */
-$paymentIconsMono = $viewModels->require(PaymentIconsMono::class);
+$paymentIconsMono = $block->getPaymentIconsMono();
 
 /** @var PaymentIconsFlat $paymentIconsFlat */
-$paymentIconsFlat = $viewModels->require(PaymentIconsFlat::class);
+$paymentIconsFlat = $block->getPaymentIconsFlat();
 
 /** @var StorePayments $storePayments */
-$storePayments = $viewModels->require(StorePayments::class);
+$storePayments = $block->getStoreInfoPayments();
 
 $paymentOptions = $storePayments->getPaymentMethods();
 
@@ -30,7 +28,7 @@ $iconStyle = $block->getIconStyle() ?: $storePayments->getIconStyle() ?: 'defaul
 $iconWidth = (int) $block->getIconWidth() ?: 64;
 $iconHeight = (int) $block->getIconHeight() ?: 48;
 
-$cssClasses = $block->getCssClasses() ?: 'storeinfo flex flex-wrap gap-4';
+$cssClasses = $block->getCssClasses() ?: 'storeinfo payment-logos';
 
 if (!$paymentOptions) {
     return '';

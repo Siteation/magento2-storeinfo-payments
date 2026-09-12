@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+    Block declarations and view models, shared by every theme, so every container
+    named here has to exist without Hyvä: footer and minicart.addons both come from
+    Magento core. hyva_default.xml moves the blocks into the Hyvä containers and adds
+    the Tailwind classes.
+
+    Luma styles the templates through web/css/source/_module.less, so no css_classes
+    are needed here.
+-->
+<page
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceContainer name="footer">
+            <block
+                name="siteation.payment.logos.footer"
+                as="payment-logos"
+                template="Siteation_StoreInfoPayments::html/marquee.phtml"
+                ifconfig="siteation_storeinfo_payment/payment_locations/show_before_footer"
+            >
+                <arguments>
+                    <argument name="payment_icons" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIcons</argument>
+                    <argument name="payment_icons_mono" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIconsMono</argument>
+                    <argument name="payment_icons_flat" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIconsFlat</argument>
+                    <argument name="store_info_payments" xsi:type="object">Siteation\StoreInfoPayments\ViewModel\StorePayments</argument>
+                </arguments>
+            </block>
+
+            <block
+                name="siteation.payment.logos.footer.content"
+                template="Siteation_StoreInfoPayments::html/row.phtml"
+                ifconfig="siteation_storeinfo_payment/payment_locations/show_in_footer"
+            >
+                <arguments>
+                    <argument name="payment_icons" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIcons</argument>
+                    <argument name="payment_icons_mono" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIconsMono</argument>
+                    <argument name="payment_icons_flat" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIconsFlat</argument>
+                    <argument name="store_info_payments" xsi:type="object">Siteation\StoreInfoPayments\ViewModel\StorePayments</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="minicart.addons">
+            <block
+                name="siteation.payment.logos.cart-drawer"
+                template="Siteation_StoreInfoPayments::html/row.phtml"
+                ifconfig="siteation_storeinfo_payment/payment_locations/show_in_minicart"
+            >
+                <arguments>
+                    <argument name="payment_icons" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIcons</argument>
+                    <argument name="payment_icons_mono" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIconsMono</argument>
+                    <argument name="payment_icons_flat" xsi:type="object">Siteation\IconsPayment\ViewModel\PaymentIconsFlat</argument>
+                    <argument name="store_info_payments" xsi:type="object">Siteation\StoreInfoPayments\ViewModel\StorePayments</argument>
+                    <argument name="icon_width" xsi:type="string">42</argument>
+                    <argument name="icon_height" xsi:type="string">28</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
