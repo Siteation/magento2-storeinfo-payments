@@ -1,20 +1,10 @@
 <?xml version="1.0"?>
-<!--
-    Hyvä styling for the blocks declared in default.xml. Add arguments through
-    referenceBlock: re-declaring a block that default.xml already declares would
-    replace it, arguments and all, and the templates would lose their view models.
-
-    The templates render Luma-ready markup, so everything Tailwind is set here. Note
-    that tailwind/module.css has to @source this directory for the classes to survive
-    the build.
--->
 <page
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
 >
     <body>
-        <!-- The Hyvä containers these belong in do not exist without Hyvä, so
-             default.xml declares the blocks in core containers and they move here. -->
+        <move element="siteation.payment.logos.footer" destination="footer" before="footer-content"/>
         <move element="siteation.payment.logos.footer.content" destination="footer-content"/>
         <move element="siteation.payment.logos.cart-drawer" destination="cart-drawer.bottom"/>
 

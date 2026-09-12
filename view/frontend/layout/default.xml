@@ -1,19 +1,10 @@
 <?xml version="1.0"?>
-<!--
-    Block declarations and view models, shared by every theme, so every container
-    named here has to exist without Hyvä: footer and minicart.addons both come from
-    Magento core. hyva_default.xml moves the blocks into the Hyvä containers and adds
-    the Tailwind classes.
-
-    Luma styles the templates through web/css/source/_module.less, so no css_classes
-    are needed here.
--->
 <page
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
 >
     <body>
-        <referenceContainer name="footer">
+        <referenceContainer name="page.bottom.container">
             <block
                 name="siteation.payment.logos.footer"
                 as="payment-logos"
@@ -27,7 +18,9 @@
                     <argument name="store_info_payments" xsi:type="object">Siteation\StoreInfoPayments\ViewModel\StorePayments</argument>
                 </arguments>
             </block>
+        </referenceContainer>
 
+        <referenceContainer name="footer">
             <block
                 name="siteation.payment.logos.footer.content"
                 template="Siteation_StoreInfoPayments::html/row.phtml"
