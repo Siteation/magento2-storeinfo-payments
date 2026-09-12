@@ -6,7 +6,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.1.0...main
+[Unreleased]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.2.0...main
+
+## [2.2.0] - 2026-09-12
+
+[2.2.0]: https://github.com/Siteation/magento2-storeinfo-payments/compare/2.1.0...2.2.0
+
+### Changed
+
+- Hyvä is no longer required. `hyva-themes/magento2-theme-module` and
+  `siteation/magento2-hyva-icons-payment` are out of `require`; the icons now come from
+  `siteation/magento2-icons-payment`, which needs nothing but `magento/framework`. A
+  Hyvä store keeps the Hyvä look and the Hyvä CMS components.
+- The templates render theme neutral markup. Luma styles it through
+  `web/css/source/_module.less`, Breeze through `web/css/breeze/_default.less` and Hyvä
+  through `view/frontend/tailwind/`, with the utility classes passed as block arguments
+  from the `hyva_default` layout handle.
+
+### Fixed
+
+- **Show In Footer** and **Show In Minicart** did nothing outside Hyvä, because the
+  blocks were declared in containers only Hyvä defines. They are declared in Magento
+  core containers now and moved into the Hyvä ones when a Hyvä theme is active.
+- **Show Before Footer** rendered inside the footer instead of above it.
 
 ## [2.1.0] - 2026-02-14
 

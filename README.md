@@ -2,13 +2,16 @@
 
 [![Packagist Version](https://img.shields.io/packagist/v/siteation/magento2-storeinfo-payments?style=for-the-badge)](https://packagist.org/packages/siteation/magento2-storeinfo-payments)
 ![Supported Magento Versions](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/magento-2.4-support.png)
-[![Hyvä Themes Module](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/hyva-module.png)](https://hyva.io/)
+[![Hyvä Themes Supported](https://img.shields.io/badge/Hyva_Themes-Supported-3df0af.svg?longCache=true&style=for-the-badge)](https://hyva.io/)
 [![Hyvä CMS Supported](https://img.shields.io/badge/Hyva_CMS-Supported-0a144b.svg?longCache=true&style=for-the-badge)](https://hyva.io/)
 [![License](https://raw.githubusercontent.com/Siteation/.github/main/assets/badges/license.png)](https://github.com/Siteation/magento2-storeinfo-payments/blob/main/LICENSE)
 
 The Siteation StoreInfo Payments module simplifies displaying configured payment methods on your store.
 
 Once enabled for checkout, this module automatically displays the same options in your footer or other chosen locations.
+
+It runs on **any** Magento 2 theme. Luma, Breeze, Hyvä or a custom theme all get styled
+output out of the box, and a Hyvä store additionally gets the Hyvä CMS components.
 
 ## Installation
 
@@ -32,6 +35,32 @@ To display payment methods in other areas, use the ViewModel provided by this mo
 The default icon style is "default" (card with icon).
 
 You can configure the style through the admin option found in **Stores → Configuration → Siteation → Payment Methods → Payment Method Style**.
+
+### Locations
+
+Three placements, each toggled under **Stores → Configuration → Siteation → Payment Methods → Payment Locations**:
+
+| Option | Where it renders |
+| ------ | ---------------- |
+| Show Before Footer | Above the footer, as a scrolling marquee |
+| Show In Footer | Inside the footer, as a plain row |
+| Show In Minicart | In the minicart, as a plain row |
+
+Every placement works on every theme. The blocks are declared in containers Magento core
+provides and are moved into the matching Hyvä containers when a Hyvä theme is active.
+
+### Styling
+
+Styling ships per frontend, so the same markup looks right everywhere:
+
+| Theme | Source |
+| ----- | ------ |
+| Luma and Luma based | `view/frontend/web/css/source/_module.less` |
+| Breeze | `view/frontend/web/css/breeze/_default.less` |
+| Hyvä | `view/frontend/tailwind/` |
+
+The templates themselves carry no theme specific classes. Override the look per block
+with the `css_classes` argument in your own layout XML.
 
 ### Credit Card Method Unbundling
 
